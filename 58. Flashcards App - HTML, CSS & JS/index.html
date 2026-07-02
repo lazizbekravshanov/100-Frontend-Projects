@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Capital Cities Flashcards</h1>
+      <p class="app__subtitle">Click the card or press <kbd>Space</kbd> to flip. Test what you know.</p>
+    </header>
+
+    <div class="status">
+      <span id="counter" class="status__counter" aria-live="polite">Card 1 of 10</span>
+      <span id="knownCount" class="status__known">0 known</span>
+    </div>
+
+    <div class="scene">
+      <button type="button" class="card" id="card" aria-label="Flashcard, click to flip">
+        <div class="card__inner" id="cardInner">
+          <div class="card__face card__face--front">
+            <span class="card__tag">Question</span>
+            <p class="card__text" id="front">—</p>
+            <span class="card__hint">Tap to reveal</span>
+          </div>
+          <div class="card__face card__face--back">
+            <span class="card__tag">Answer</span>
+            <p class="card__text" id="back">—</p>
+            <span class="card__hint">Tap to flip back</span>
+          </div>
+        </div>
+      </button>
+    </div>
+
+    <div class="controls">
+      <button type="button" class="btn" id="prevBtn" aria-label="Previous card">
+        <span aria-hidden="true">‹</span> Prev
+      </button>
+      <button type="button" class="btn btn--known" id="knownBtn" aria-pressed="false">
+        Mark known
+      </button>
+      <button type="button" class="btn" id="nextBtn" aria-label="Next card">
+        Next <span aria-hidden="true">›</span>
+      </button>
+    </div>
+
+    <div class="controls controls--secondary">
+      <button type="button" class="btn btn--ghost" id="shuffleBtn">Shuffle deck</button>
+      <button type="button" class="btn btn--ghost" id="resetBtn">Reset progress</button>
+    </div>
+  </main>
+</body>
+</html>
