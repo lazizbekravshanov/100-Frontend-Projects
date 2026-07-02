@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back to Top Button</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body id="top">
+  <header class="masthead">
+    <div class="masthead__wrap">
+      <p class="eyebrow">Field notes</p>
+      <h1 class="masthead__title">The Long Read</h1>
+      <p class="masthead__lead">
+        Scroll down through the article. Once you have moved past the fold, a back-to-top
+        button fades in at the corner with a ring that tracks your reading progress.
+      </p>
+    </div>
+  </header>
+
+  <main class="article">
+    <article class="prose" id="prose"></article>
+  </main>
+
+  <footer class="foot">
+    <p>You reached the end. Nicely done.</p>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>
+    <svg class="to-top__ring" viewBox="0 0 44 44" aria-hidden="true">
+      <circle class="to-top__track" cx="22" cy="22" r="20"></circle>
+      <circle class="to-top__progress" id="progress" cx="22" cy="22" r="20"></circle>
+    </svg>
+    <svg class="to-top__arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+      <path d="M12 19V6M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+</body>
+</html>
