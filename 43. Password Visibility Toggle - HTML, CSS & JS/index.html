@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Visibility Toggle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <div class="auth">
+      <header class="auth__head">
+        <div class="auth__mark" aria-hidden="true">◆</div>
+        <h1 class="auth__title">Create your account</h1>
+        <p class="auth__sub">Choose a strong password. You can reveal it any time.</p>
+      </header>
+
+      <form class="form" novalidate>
+        <div class="field">
+          <label class="field__label" for="email">Email</label>
+          <input class="field__input" type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="password">Password</label>
+          <div class="field__wrap">
+            <input class="field__input" type="password" id="password" name="password"
+                   autocomplete="new-password" placeholder="At least 8 characters"
+                   aria-describedby="strength-text">
+            <button type="button" class="toggle" data-toggle="password"
+                    aria-label="Show password" aria-pressed="false">
+              <span class="toggle__icon" data-icon></span>
+            </button>
+          </div>
+
+          <div class="strength" data-strength hidden>
+            <div class="strength__track" aria-hidden="true">
+              <div class="strength__bar" data-bar></div>
+            </div>
+            <p class="strength__text" id="strength-text" data-strength-text aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="confirm">Confirm password</label>
+          <div class="field__wrap">
+            <input class="field__input" type="password" id="confirm" name="confirm"
+                   autocomplete="new-password" placeholder="Re-enter your password">
+            <button type="button" class="toggle" data-toggle="confirm"
+                    aria-label="Show password" aria-pressed="false">
+              <span class="toggle__icon" data-icon></span>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Create account</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
