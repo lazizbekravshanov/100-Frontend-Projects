@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">BMI Calculator</h1>
+      <p class="app__subtitle">Body Mass Index from your height and weight.</p>
+    </header>
+
+    <div class="unit-toggle" role="radiogroup" aria-label="Units">
+      <button class="unit is-active" type="button" data-units="metric" role="radio" aria-checked="true">Metric</button>
+      <button class="unit" type="button" data-units="imperial" role="radio" aria-checked="false">Imperial</button>
+    </div>
+
+    <form class="form" id="form" novalidate>
+      <div class="form__row" id="heightRow">
+        <div class="field">
+          <label class="field__label" for="height" id="heightLabel">Height (cm)</label>
+          <input class="field__input" id="height" type="number" inputmode="decimal" min="0" step="0.1" placeholder="175">
+        </div>
+        <div class="field field--inches" id="inchesField" hidden>
+          <label class="field__label" for="inches">Inches</label>
+          <input class="field__input" id="inches" type="number" inputmode="decimal" min="0" max="11" step="0.1" placeholder="9">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="weight" id="weightLabel">Weight (kg)</label>
+        <input class="field__input" id="weight" type="number" inputmode="decimal" min="0" step="0.1" placeholder="70">
+      </div>
+
+      <p class="form__error" id="error" role="alert" hidden></p>
+
+      <div class="form__actions">
+        <button class="btn btn--primary" type="submit">Calculate BMI</button>
+        <button class="btn" type="reset" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <section class="result" id="result" hidden aria-live="polite">
+      <div class="result__top">
+        <div class="result__figure">
+          <span class="result__value" id="bmiValue">0.0</span>
+          <span class="result__unit">BMI</span>
+        </div>
+        <span class="result__badge" id="category">—</span>
+      </div>
+
+      <div class="scale" aria-hidden="true">
+        <div class="scale__bar">
+          <span class="scale__seg scale__seg--under"></span>
+          <span class="scale__seg scale__seg--normal"></span>
+          <span class="scale__seg scale__seg--over"></span>
+          <span class="scale__seg scale__seg--obese"></span>
+        </div>
+        <span class="scale__marker" id="marker"></span>
+        <div class="scale__labels">
+          <span>15</span>
+          <span>18.5</span>
+          <span>25</span>
+          <span>30</span>
+          <span>40</span>
+        </div>
+      </div>
+
+      <p class="result__note" id="note"></p>
+    </section>
+  </main>
+</body>
+</html>
