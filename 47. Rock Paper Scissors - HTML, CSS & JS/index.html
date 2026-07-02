@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Rock · Paper · Scissors</h1>
+      <p class="app__subtitle">Pick your move. First to feel lucky wins.</p>
+    </header>
+
+    <section class="scoreboard" aria-label="Score">
+      <div class="score">
+        <span class="score__label">You</span>
+        <span class="score__value" id="playerScore">0</span>
+      </div>
+      <div class="score score--divider" aria-hidden="true">
+        <span class="score__label">Rounds</span>
+        <span class="score__value" id="roundCount">0</span>
+      </div>
+      <div class="score">
+        <span class="score__label">CPU</span>
+        <span class="score__value" id="cpuScore">0</span>
+      </div>
+    </section>
+
+    <section class="arena" aria-label="Match">
+      <div class="hand" id="playerHand">
+        <span class="hand__emoji" id="playerEmoji" aria-hidden="true">✊</span>
+        <span class="hand__caption">You</span>
+      </div>
+      <div class="arena__vs" aria-hidden="true">vs</div>
+      <div class="hand" id="cpuHand">
+        <span class="hand__emoji" id="cpuEmoji" aria-hidden="true">✊</span>
+        <span class="hand__caption">CPU</span>
+      </div>
+    </section>
+
+    <p class="outcome" id="outcome" aria-live="polite">Make your move to start.</p>
+
+    <section class="choices" aria-label="Your move">
+      <button class="choice" type="button" data-move="rock" aria-label="Rock">
+        <span class="choice__emoji" aria-hidden="true">✊</span>
+        <span class="choice__label">Rock</span>
+      </button>
+      <button class="choice" type="button" data-move="paper" aria-label="Paper">
+        <span class="choice__emoji" aria-hidden="true">✋</span>
+        <span class="choice__label">Paper</span>
+      </button>
+      <button class="choice" type="button" data-move="scissors" aria-label="Scissors">
+        <span class="choice__emoji" aria-hidden="true">✌️</span>
+        <span class="choice__label">Scissors</span>
+      </button>
+    </section>
+
+    <div class="actions">
+      <button class="btn" id="resetBtn" type="button">Reset game</button>
+    </div>
+  </main>
+</body>
+</html>

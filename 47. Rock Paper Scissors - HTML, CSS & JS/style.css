@@ -1,0 +1,237 @@
+:root {
+  --bg: #ffffff;
+  --surface: #f7f7f8;
+  --text: #18181b;
+  --muted: #71717a;
+  --border: #e4e4e7;
+  --accent: #7c3aed;
+  --win: #16a34a;
+  --lose: #dc2626;
+  --radius: 14px;
+  --space: 1rem;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --shadow: 0 1px 2px rgba(24, 24, 27, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: calc(var(--space) * 2) var(--space);
+}
+
+.app {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space) * 1.5);
+}
+
+.app__header {
+  text-align: center;
+}
+
+.app__title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.app__subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.score {
+  text-align: center;
+  padding: 0.85rem;
+}
+
+.score--divider {
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+.score__label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.score__value {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 0.15rem;
+}
+
+.arena {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.hand {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem 0.5rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.hand--win {
+  border-color: var(--win);
+  background: #f0fdf4;
+}
+
+.hand--lose {
+  border-color: var(--lose);
+  background: #fef2f2;
+}
+
+.hand__emoji {
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.hand.is-shaking .hand__emoji {
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-8px) rotate(-8deg); }
+  50% { transform: translateY(0) rotate(0); }
+  75% { transform: translateY(-6px) rotate(6deg); }
+}
+
+.hand__caption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.arena__vs {
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.outcome {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+  min-height: 1.75rem;
+}
+
+.outcome--win { color: var(--win); }
+.outcome--lose { color: var(--lose); }
+.outcome--draw { color: var(--muted); }
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.choice {
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.05s, background 0.15s;
+}
+
+.choice:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+.choice:active {
+  transform: translateY(1px);
+}
+
+.choice.is-selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.18);
+}
+
+.choice__emoji {
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.choice__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.7rem 1.4rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn:hover {
+  background: var(--surface);
+}
+
+.choice:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 400px) {
+  .choice__label { font-size: 0.78rem; }
+  .hand__emoji { font-size: 2.2rem; }
+}
