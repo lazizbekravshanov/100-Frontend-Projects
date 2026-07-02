@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Quiet Power of Constraints — Field Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-brand" href="./index.html">Field Notes</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="./index.html">Essays</a>
+      <a href="./index.html">Archive</a>
+      <a href="./index.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article">
+      <div class="article-head">
+        <p class="kicker">Design &middot; 8 min read</p>
+        <h1 class="article-title">The Quiet Power of Constraints</h1>
+        <p class="article-standfirst">
+          We tend to romanticise unlimited options. But the best work almost
+          always emerges from a tight brief, a small palette, and a firm no.
+        </p>
+
+        <div class="byline">
+          <span class="avatar" aria-hidden="true">EM</span>
+          <div class="byline-meta">
+            <p class="byline-name">Elena Moreau</p>
+            <p class="byline-detail">
+              <time datetime="2026-06-18">June 18, 2026</time>
+              <span aria-hidden="true">&middot;</span>
+              8 min read
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <figure class="hero" aria-hidden="true">
+        <svg viewBox="0 0 800 360" role="presentation" preserveAspectRatio="xMidYMid slice">
+          <rect class="hero-fill" width="800" height="360" />
+          <g class="hero-lines">
+            <line x1="0" y1="90" x2="800" y2="90" />
+            <line x1="0" y1="180" x2="800" y2="180" />
+            <line x1="0" y1="270" x2="800" y2="270" />
+            <line x1="200" y1="0" x2="200" y2="360" />
+            <line x1="400" y1="0" x2="400" y2="360" />
+            <line x1="600" y1="0" x2="600" y2="360" />
+          </g>
+          <circle class="hero-circle" cx="400" cy="180" r="96" fill="none" stroke-width="3" />
+          <rect class="hero-square" x="304" y="84" width="192" height="192" fill="none" stroke-width="3" />
+          <circle class="hero-dot" cx="400" cy="180" r="10" />
+        </svg>
+        <figcaption>An idea, boxed in — and better for it.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <p>
+          Give a designer an empty canvas and infinite time, and you will often
+          get back something oddly forgettable. Give the same designer a
+          matchbox, two colours, and an afternoon, and they will surprise you.
+          Limits are not the enemy of creativity. More often, they are its
+          starting pistol.
+        </p>
+
+        <p>
+          This runs against the story we like to tell ourselves. Freedom feels
+          generous; a constraint feels like a loss. Yet when everything is
+          possible, nothing is decided, and a blank page has a way of staying
+          blank. A boundary does the opposite. It closes a hundred doors so you
+          can finally walk through one.
+        </p>
+
+        <h2>Why fewer choices help</h2>
+
+        <p>
+          Every open decision carries a small tax. Which typeface, which grid,
+          which of a thousand possible blues. Left unpaid, these taxes compound
+          into the particular paralysis of the over-resourced project: lavish
+          budget, endless runway, and somehow nothing shipped.
+        </p>
+
+        <p>
+          A constraint collects those taxes up front. Once you decide the palette
+          is black, white, and a single restrained accent, you stop relitigating
+          colour on every screen. The saved attention flows somewhere more
+          valuable — into rhythm, spacing, and the words themselves.
+        </p>
+
+        <blockquote>
+          <p>
+            “Art consists of limitation. The most beautiful part of every picture
+            is the frame.”
+          </p>
+          <cite>— G. K. Chesterton</cite>
+        </blockquote>
+
+        <p>
+          Chesterton was talking about paintings, but the principle travels. The
+          frame is what tells you where the work ends and the world begins. Remove
+          it and the image bleeds into everything, which is another way of saying
+          it becomes nothing in particular.
+        </p>
+
+        <h2>Constraints in practice</h2>
+
+        <p>
+          Useful limits tend to fall into a few reliable buckets. When a project
+          drifts, it is usually because one of these was never set:
+        </p>
+
+        <ul>
+          <li><strong>Palette:</strong> a neutral base plus at most one accent.</li>
+          <li><strong>Type:</strong> one family, two or three sizes, honest hierarchy.</li>
+          <li><strong>Scope:</strong> a single job the page must do well.</li>
+          <li><strong>Time:</strong> a deadline close enough to force decisions.</li>
+        </ul>
+
+        <p>
+          None of these are glamorous. All of them are load-bearing. Notice that
+          each one removes options rather than adding features — the discipline is
+          subtractive, not additive.
+        </p>
+
+        <h3>A small worked example</h3>
+
+        <p>
+          Suppose you are styling a card component and reach for a shadow. The
+          unconstrained instinct is to tune blur, spread, opacity, and colour
+          until it looks “right,” then repeat that negotiation on the next card,
+          and the next. A constraint short-circuits the whole ritual:
+        </p>
+
+        <pre><code>:root {
+  --border: #e4e4e7;
+  --radius: 12px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  /* no shadow: let the border do the work */
+}</code></pre>
+
+        <p>
+          One rule, applied everywhere, and the shadow debate simply evaporates.
+          The interface reads as calmer because it <em>is</em> calmer — fewer
+          competing decisions on the screen at once.
+        </p>
+
+        <h2>The freedom on the other side</h2>
+
+        <p>
+          The paradox is that constraints do not shrink the work. They relocate
+          the freedom to where it matters. Spend your decisions on structure and
+          you have plenty left for the details that people actually feel: a line
+          of copy that lands, a transition that breathes, whitespace that lets the
+          eye rest.
+        </p>
+
+        <p>
+          So the next time a project feels stuck under the weight of possibility,
+          resist the urge to add. Take something away instead. Pick the frame
+          first. The picture, it turns out, was waiting for it all along.
+        </p>
+      </div>
+
+      <footer class="author-bio">
+        <span class="avatar avatar-lg" aria-hidden="true">EM</span>
+        <div>
+          <p class="bio-name">Written by Elena Moreau</p>
+          <p class="bio-text">
+            Elena is a product designer and writer based in Lyon. She writes
+            Field Notes, a weekly letter on craft, constraint, and the small
+            decisions that make interfaces feel considered.
+          </p>
+          <a class="bio-link" href="./index.html">More essays by Elena &rarr;</a>
+        </div>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Field Notes</p>
+    <p>Written slowly, on purpose.</p>
+  </footer>
+</body>
+</html>
