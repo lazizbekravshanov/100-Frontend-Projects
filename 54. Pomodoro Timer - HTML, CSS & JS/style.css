@@ -1,0 +1,264 @@
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --text: #18181b;
+  --muted: #71717a;
+  --border: #e4e4e7;
+  --accent: #e11d48;
+  --accent-soft: #fce7ec;
+  --break: #0d9488;
+  --break-soft: #e0f2f1;
+  --radius: 14px;
+  --space: 1rem;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --phase: var(--accent);
+  --phase-soft: var(--accent-soft);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem 4rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.5;
+  transition: background 0.4s ease;
+}
+
+body.is-break {
+  --phase: var(--break);
+  --phase-soft: var(--break-soft);
+}
+
+body.flash {
+  animation: flash 0.6s ease 3;
+}
+
+@keyframes flash {
+  0%, 100% { background: var(--bg); }
+  50% { background: var(--phase-soft); }
+}
+
+.app {
+  width: 100%;
+  max-width: 26rem;
+  text-align: center;
+}
+
+.app__header {
+  margin-bottom: 1.5rem;
+}
+
+.app__title {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.app__subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.modes {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  margin-bottom: 1.75rem;
+}
+
+.modes__btn {
+  padding: 0.45rem 1.25rem;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.modes__btn.is-active {
+  color: #fff;
+  background: var(--phase);
+}
+
+.modes__btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--phase-soft);
+}
+
+.timer {
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.ring {
+  position: relative;
+  width: min(16rem, 72vw);
+  aspect-ratio: 1;
+}
+
+.ring__svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring__track {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 10;
+}
+
+.ring__progress {
+  fill: none;
+  stroke: var(--phase);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 628.3;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.4s linear, stroke 0.4s ease;
+}
+
+.ring__content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 0.25rem;
+}
+
+.ring__phase {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.timer__display {
+  font-size: 3.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.controls {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.btn {
+  min-width: 6.5rem;
+  padding: 0.75rem 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: opacity 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover {
+  border-color: var(--muted);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--phase-soft);
+}
+
+.btn--primary {
+  color: #fff;
+  background: var(--phase);
+  border-color: var(--phase);
+}
+
+.btn--primary:hover {
+  opacity: 0.9;
+  border-color: var(--phase);
+}
+
+.sessions {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 1.75rem;
+}
+
+.sessions strong {
+  color: var(--text);
+}
+
+.settings {
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: left;
+}
+
+.settings__heading {
+  margin: 0 0 0.9rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.settings__row {
+  display: flex;
+  gap: 0.9rem;
+}
+
+.field {
+  flex: 1;
+}
+
+.field__label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.field__input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field__input:focus-visible {
+  outline: none;
+  border-color: var(--phase);
+  box-shadow: 0 0 0 3px var(--phase-soft);
+}
+
+.field__input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

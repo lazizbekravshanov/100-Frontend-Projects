@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app" id="app">
+    <header class="app__header">
+      <h1 class="app__title">Pomodoro</h1>
+      <p class="app__subtitle">Focus in sprints. Rest in between.</p>
+    </header>
+
+    <div class="modes" role="tablist" aria-label="Timer mode">
+      <button class="modes__btn is-active" type="button" role="tab" aria-selected="true" data-mode="work">Focus</button>
+      <button class="modes__btn" type="button" role="tab" aria-selected="false" data-mode="break">Break</button>
+    </div>
+
+    <section class="timer" aria-label="Timer">
+      <div class="ring">
+        <svg class="ring__svg" viewBox="0 0 220 220" aria-hidden="true">
+          <circle class="ring__track" cx="110" cy="110" r="100"></circle>
+          <circle class="ring__progress" id="ring-progress" cx="110" cy="110" r="100"></circle>
+        </svg>
+        <div class="ring__content">
+          <span class="ring__phase" id="phase-label">Focus</span>
+          <span class="timer__display" id="display" aria-live="polite">25:00</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="controls">
+      <button class="btn btn--primary" type="button" id="start-pause">Start</button>
+      <button class="btn" type="button" id="reset">Reset</button>
+    </div>
+
+    <p class="sessions">
+      Completed sessions: <strong id="session-count">0</strong>
+    </p>
+
+    <section class="settings">
+      <h2 class="settings__heading">Durations (minutes)</h2>
+      <div class="settings__row">
+        <div class="field">
+          <label class="field__label" for="work-mins">Focus</label>
+          <input class="field__input" id="work-mins" type="number" min="1" max="90" value="25" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label class="field__label" for="break-mins">Break</label>
+          <input class="field__input" id="break-mins" type="number" min="1" max="60" value="5" inputmode="numeric">
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
