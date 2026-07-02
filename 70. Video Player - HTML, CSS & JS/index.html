@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Player</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page__header">
+      <h1 class="page__title">Video Player</h1>
+      <p class="page__sub">Custom controls over an HTML5 video element.</p>
+    </header>
+
+    <div class="player" id="player">
+      <!--
+        Source strategy: a tiny embedded MP4 data-URI (public-domain
+        "Big Buck Bunny" 5-second clip) is loaded first. If the browser can't
+        play it, script.js falls back to a locally generated canvas video
+        stream so the player is always functional with no external files.
+      -->
+      <video id="video" class="player__video" playsinline
+             poster="" aria-label="Sample video">
+      </video>
+
+      <button class="player__bigplay" id="bigPlay" type="button" aria-label="Play video">
+        <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+      </button>
+
+      <div class="controls" id="controls">
+        <div class="controls__seek">
+          <input class="seek" id="seek" type="range" min="0" max="1000" value="0"
+                 step="1" aria-label="Seek" />
+        </div>
+
+        <div class="controls__row">
+          <button class="ctrl" id="playBtn" type="button" aria-label="Play">
+            <svg class="icon-play" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" hidden><path d="M7 5h4v14H7zm6 0h4v14h-4z" fill="currentColor"/></svg>
+          </button>
+
+          <div class="volume">
+            <button class="ctrl" id="muteBtn" type="button" aria-label="Mute">
+              <svg class="icon-vol" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9zm12 3a4 4 0 0 0-2-3.46v6.92A4 4 0 0 0 16 12z" fill="currentColor"/></svg>
+              <svg class="icon-muted" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" hidden><path d="M4 9v6h4l5 5V4L8 9zm11.5 3 2.5-2.5-1-1L14.5 11 12 8.5l-1 1 2.5 2.5L11 14.5l1 1 2.5-2.5L17 15.5l1-1z" fill="currentColor"/></svg>
+            </button>
+            <input class="volume__range" id="volume" type="range" min="0" max="100" value="100"
+                   aria-label="Volume" />
+          </div>
+
+          <span class="time" aria-live="off">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+          </span>
+
+          <div class="controls__spacer"></div>
+
+          <button class="ctrl ctrl--text" id="speedBtn" type="button" aria-label="Playback speed">1x</button>
+
+          <button class="ctrl" id="fullscreenBtn" type="button" aria-label="Fullscreen">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 4h6v2H6v4H4zm10 0h6v6h-2V6h-4zM4 14h2v4h4v2H4zm14 0h2v6h-6v-2h4z" fill="currentColor"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
