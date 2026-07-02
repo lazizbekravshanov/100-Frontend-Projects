@@ -1,0 +1,211 @@
+:root {
+  --bg: #ffffff;
+  --surface: #f7f7f8;
+  --text: #18181b;
+  --muted: #71717a;
+  --border: #e4e4e7;
+  --accent: #2563eb;
+  --accent-soft: #dbe4fe;
+
+  --radius: 14px;
+  --space: 1rem;
+  --line-w: 2px;
+  --dot: 16px;
+
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 2.5rem);
+}
+
+/* Masthead */
+.masthead {
+  max-width: 34rem;
+  margin: 0 auto clamp(3rem, 7vw, 5rem);
+  text-align: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.masthead__title {
+  font-size: clamp(2rem, 5.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.masthead__lede {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* Timeline core */
+.timeline {
+  list-style: none;
+  position: relative;
+  padding: 0;
+}
+
+/* The central line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--line-w);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--border) 8%,
+    var(--border) 92%,
+    transparent
+  );
+}
+
+.timeline__item {
+  position: relative;
+  width: 50%;
+  padding: 0.75rem 3rem;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.timeline__item:last-child {
+  margin-bottom: 0;
+}
+
+/* Alternating sides */
+.timeline__item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline__item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+/* Dots on the line */
+.timeline__marker {
+  position: absolute;
+  top: 1.65rem;
+  width: var(--dot);
+  height: var(--dot);
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  z-index: 2;
+}
+
+.timeline__item:nth-child(odd) .timeline__marker {
+  right: calc(-1 * var(--dot) / 2);
+}
+
+.timeline__item:nth-child(even) .timeline__marker {
+  left: calc(-1 * var(--dot) / 2);
+}
+
+/* Card */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.card__date {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+}
+
+.card__body {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: clamp(3rem, 7vw, 5rem);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Mobile: single left-aligned column */
+@media (max-width: 720px) {
+  .timeline::before {
+    left: 8px;
+    transform: none;
+  }
+
+  .timeline__item,
+  .timeline__item:nth-child(odd),
+  .timeline__item:nth-child(even) {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding: 0.25rem 0 0.25rem 2.25rem;
+  }
+
+  .timeline__item:nth-child(odd) .timeline__marker,
+  .timeline__item:nth-child(even) .timeline__marker {
+    left: 0;
+    right: auto;
+  }
+}
+
+/* Focus visibility for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
