@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autocomplete Search</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="search-card">
+        <header class="search-card__header">
+          <p class="eyebrow">Live suggestions</p>
+          <h1 class="title">Find a country</h1>
+          <p class="subtitle">
+            Start typing to search 190+ countries. Use the arrow keys to
+            navigate, Enter to select, Escape to dismiss.
+          </p>
+        </header>
+
+        <div class="combobox">
+          <div class="combobox__field">
+            <svg
+              class="combobox__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+              <line
+                x1="16.5"
+                y1="16.5"
+                x2="21"
+                y2="21"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+
+            <input
+              id="search-input"
+              class="combobox__input"
+              type="text"
+              role="combobox"
+              placeholder="Search countries…"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-controls="suggestions"
+              aria-label="Search countries"
+            />
+
+            <button
+              id="clear-button"
+              class="combobox__clear"
+              type="button"
+              aria-label="Clear search"
+              hidden
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <line
+                  x1="6"
+                  y1="6"
+                  x2="18"
+                  y2="18"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="18"
+                  y1="6"
+                  x2="6"
+                  y2="18"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <ul
+            id="suggestions"
+            class="listbox"
+            role="listbox"
+            aria-label="Country suggestions"
+            hidden
+          ></ul>
+        </div>
+
+        <p id="selected-value" class="selected" aria-live="polite"></p>
+      </section>
+    </main>
+  </body>
+</html>
