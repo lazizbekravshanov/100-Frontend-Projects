@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <div class="card">
+      <header class="card__head">
+        <p class="card__kicker">Get started</p>
+        <h1 class="card__title">Create your account</h1>
+        <p class="card__sub">Real-time validation as you type. Nothing submits until it&rsquo;s valid.</p>
+      </header>
+
+      <form class="form" id="signupForm" novalidate>
+        <div class="field">
+          <label class="field__label" for="name">Full name</label>
+          <input class="field__input" type="text" id="name" name="name"
+                 autocomplete="name" aria-describedby="name-error">
+          <p class="field__error" id="name-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="email">Email</label>
+          <input class="field__input" type="email" id="email" name="email"
+                 autocomplete="email" aria-describedby="email-error">
+          <p class="field__error" id="email-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="password">Password</label>
+          <input class="field__input" type="password" id="password" name="password"
+                 autocomplete="new-password" aria-describedby="password-error">
+          <p class="field__error" id="password-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="confirm">Confirm password</label>
+          <input class="field__input" type="password" id="confirm" name="confirm"
+                 autocomplete="new-password" aria-describedby="confirm-error">
+          <p class="field__error" id="confirm-error" role="alert"></p>
+        </div>
+
+        <button type="submit" class="btn">Create account</button>
+      </form>
+
+      <div class="success" id="success" hidden role="status">
+        <div class="success__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+        </div>
+        <h2 class="success__title">You&rsquo;re all set</h2>
+        <p class="success__text">Your account has been created successfully.</p>
+        <button type="button" class="btn btn--ghost" id="resetBtn">Register another</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
