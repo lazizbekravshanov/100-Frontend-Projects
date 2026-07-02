@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="hangman">
+    <header class="hangman__header">
+      <h1 class="hangman__title">Hangman</h1>
+      <p class="hangman__sub">Guess the word before the drawing is complete.</p>
+    </header>
+
+    <div class="hangman__stage">
+      <svg class="gallows" viewBox="0 0 200 220" role="img" aria-label="Hangman drawing">
+        <!-- base structure -->
+        <line class="gallows__frame" x1="20" y1="210" x2="120" y2="210" />
+        <line class="gallows__frame" x1="50" y1="210" x2="50" y2="20" />
+        <line class="gallows__frame" x1="50" y1="20" x2="140" y2="20" />
+        <line class="gallows__frame" x1="140" y1="20" x2="140" y2="45" />
+        <!-- body parts revealed on wrong guesses -->
+        <circle class="part" data-part="0" cx="140" cy="60" r="15" />
+        <line class="part" data-part="1" x1="140" y1="75" x2="140" y2="130" />
+        <line class="part" data-part="2" x1="140" y1="90" x2="118" y2="110" />
+        <line class="part" data-part="3" x1="140" y1="90" x2="162" y2="110" />
+        <line class="part" data-part="4" x1="140" y1="130" x2="120" y2="165" />
+        <line class="part" data-part="5" x1="140" y1="130" x2="160" y2="165" />
+      </svg>
+    </div>
+
+    <section class="panel">
+      <p class="panel__category">
+        <span class="panel__label">Category</span>
+        <span id="category">—</span>
+      </p>
+
+      <div class="word" id="word" aria-label="Word to guess" aria-live="polite"></div>
+
+      <p class="status" id="status" role="status" aria-live="polite">
+        Wrong guesses: <strong id="wrongCount">0</strong> / 6
+      </p>
+
+      <div class="wrong-letters" id="wrongLetters" aria-label="Incorrect letters"></div>
+    </section>
+
+    <section class="keyboard" id="keyboard" aria-label="On-screen keyboard"></section>
+
+    <div class="result" id="result" hidden>
+      <p class="result__title" id="resultTitle"></p>
+      <p class="result__word" id="resultWord"></p>
+      <button class="btn" id="newWordBtn" type="button">New word</button>
+    </div>
+  </main>
+</body>
+</html>
