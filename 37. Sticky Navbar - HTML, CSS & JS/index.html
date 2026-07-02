@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Navbar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="navbar" id="navbar" data-scrolled="false">
+    <div class="navbar__inner">
+      <a class="navbar__brand" href="#top">
+        <span class="navbar__mark" aria-hidden="true"></span>
+        Atlas
+      </a>
+      <nav class="navbar__nav" aria-label="Section navigation">
+        <ul class="navbar__list">
+          <li><a class="navbar__link" href="#intro" data-nav>Intro</a></li>
+          <li><a class="navbar__link" href="#features" data-nav>Features</a></li>
+          <li><a class="navbar__link" href="#process" data-nav>Process</a></li>
+          <li><a class="navbar__link" href="#pricing" data-nav>Pricing</a></li>
+          <li><a class="navbar__link" href="#contact" data-nav>Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section section--hero" id="intro" tabindex="-1">
+      <div class="section__wrap">
+        <p class="eyebrow">Design system starter</p>
+        <h1 class="hero__title">Build interfaces that stay in place.</h1>
+        <p class="lead">
+          Scroll the page and watch the navigation bar shrink, gain a border, and highlight
+          the link for whichever section you are reading. Every link scrolls smoothly to its
+          target.
+        </p>
+        <a class="btn" href="#features">See the features</a>
+      </div>
+    </section>
+
+    <section class="section" id="features" tabindex="-1">
+      <div class="section__wrap">
+        <p class="eyebrow">Features</p>
+        <h2 class="section__title">Everything wired up for you</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Scroll spy</h3>
+            <p>An IntersectionObserver tracks which section owns the viewport and marks its link active.</p>
+          </article>
+          <article class="card">
+            <h3>Shrinking bar</h3>
+            <p>Past a scroll threshold the navbar compresses and adopts a crisp bottom border.</p>
+          </article>
+          <article class="card">
+            <h3>Smooth scroll</h3>
+            <p>Anchor links glide to their targets and respect users who prefer reduced motion.</p>
+          </article>
+          <article class="card">
+            <h3>Keyboard ready</h3>
+            <p>Focusing a section link moves keyboard focus to the section it points to.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="process" tabindex="-1">
+      <div class="section__wrap">
+        <p class="eyebrow">Process</p>
+        <h2 class="section__title">Three unhurried steps</h2>
+        <ol class="steps">
+          <li>
+            <span class="steps__num">01</span>
+            <div>
+              <h3>Draft the outline</h3>
+              <p>Map each page section to a nav entry so the structure is obvious from the top.</p>
+            </div>
+          </li>
+          <li>
+            <span class="steps__num">02</span>
+            <div>
+              <h3>Wire the behavior</h3>
+              <p>Attach the observer and the scroll listener; keep both cheap and passive.</p>
+            </div>
+          </li>
+          <li>
+            <span class="steps__num">03</span>
+            <div>
+              <h3>Polish the motion</h3>
+              <p>Add gentle transitions and honor reduced-motion preferences before you ship.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="pricing" tabindex="-1">
+      <div class="section__wrap">
+        <p class="eyebrow">Pricing</p>
+        <h2 class="section__title">Simple, honest plans</h2>
+        <div class="grid grid--3">
+          <article class="plan">
+            <h3>Starter</h3>
+            <p class="plan__price">$0<span>/mo</span></p>
+            <p class="plan__note">For personal projects and prototypes.</p>
+          </article>
+          <article class="plan plan--featured">
+            <h3>Studio</h3>
+            <p class="plan__price">$18<span>/mo</span></p>
+            <p class="plan__note">For freelancers shipping client work.</p>
+          </article>
+          <article class="plan">
+            <h3>Team</h3>
+            <p class="plan__price">$49<span>/mo</span></p>
+            <p class="plan__note">Shared components across a whole team.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="contact" tabindex="-1">
+      <div class="section__wrap section__wrap--center">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section__title">Ready when you are</h2>
+        <p class="lead">Reach out and we will help you wire your own sticky navigation.</p>
+        <a class="btn" href="#top">Back to top</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Atlas — a sticky navbar demo.</p>
+  </footer>
+</body>
+</html>
