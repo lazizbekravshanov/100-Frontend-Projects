@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="app__header">
+      <h1 class="app__title">Tic Tac Toe</h1>
+      <p class="app__subtitle">Play with a friend or challenge a simple computer opponent.</p>
+    </header>
+
+    <main class="app__main">
+      <section class="mode" aria-label="Game mode">
+        <button class="mode__btn is-active" id="mode2p" type="button" aria-pressed="true">2 Players</button>
+        <button class="mode__btn" id="modeAi" type="button" aria-pressed="false">Vs Computer</button>
+      </section>
+
+      <section class="scoreboard" aria-label="Scores">
+        <div class="score score--x">
+          <span class="score__label" id="labelX">Player X</span>
+          <span class="score__value" id="scoreX">0</span>
+        </div>
+        <div class="score score--draw">
+          <span class="score__label">Draws</span>
+          <span class="score__value" id="scoreDraw">0</span>
+        </div>
+        <div class="score score--o">
+          <span class="score__label" id="labelO">Player O</span>
+          <span class="score__value" id="scoreO">0</span>
+        </div>
+      </section>
+
+      <p class="status" id="status" role="status" aria-live="polite">Player X's turn</p>
+
+      <section class="board" id="board" role="grid" aria-label="Tic tac toe board"></section>
+
+      <div class="controls">
+        <button class="btn" id="reset" type="button">New Round</button>
+        <button class="btn btn--ghost" id="resetScores" type="button">Reset Scores</button>
+      </div>
+    </main>
+
+    <footer class="app__footer">
+      <p>Use Tab and Enter or Space to play with the keyboard.</p>
+    </footer>
+  </div>
+</body>
+</html>
