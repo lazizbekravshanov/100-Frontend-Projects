@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page__head">
+      <h1 class="page__title">Frequently Asked Questions</h1>
+      <p class="page__subtitle">Everything you need to know before getting started.</p>
+    </header>
+
+    <div class="accordion" id="accordion" data-single="true">
+      <div class="accordion__item">
+        <h2 class="accordion__heading">
+          <button class="accordion__trigger" id="trigger-1" aria-expanded="true" aria-controls="panel-1">
+            <span>What is included in the free plan?</span>
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div class="accordion__panel" id="panel-1" role="region" aria-labelledby="trigger-1">
+          <div class="accordion__content">
+            <p>The free plan includes unlimited personal projects, 1 GB of storage, and access to the core editor. It’s ideal for individuals exploring the product before upgrading to a team plan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <h2 class="accordion__heading">
+          <button class="accordion__trigger" id="trigger-2" aria-expanded="false" aria-controls="panel-2">
+            <span>Can I cancel my subscription at any time?</span>
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div class="accordion__panel" id="panel-2" role="region" aria-labelledby="trigger-2">
+          <div class="accordion__content">
+            <p>Yes. You can cancel from the billing settings in a single click. Your plan stays active until the end of the current billing period, and you keep access to everything you created.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <h2 class="accordion__heading">
+          <button class="accordion__trigger" id="trigger-3" aria-expanded="false" aria-controls="panel-3">
+            <span>Do you offer discounts for students?</span>
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div class="accordion__panel" id="panel-3" role="region" aria-labelledby="trigger-3">
+          <div class="accordion__content">
+            <p>We offer a 50% education discount for verified students and teachers. Apply using your institutional email address and the discount is applied automatically to eligible plans.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <h2 class="accordion__heading">
+          <button class="accordion__trigger" id="trigger-4" aria-expanded="false" aria-controls="panel-4">
+            <span>How is my data backed up?</span>
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div class="accordion__panel" id="panel-4" role="region" aria-labelledby="trigger-4">
+          <div class="accordion__content">
+            <p>Your data is encrypted at rest and backed up hourly across multiple regions. Paid plans also include a 30-day version history so you can restore earlier states of any project.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <h2 class="accordion__heading">
+          <button class="accordion__trigger" id="trigger-5" aria-expanded="false" aria-controls="panel-5">
+            <span>Which platforms are supported?</span>
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div class="accordion__panel" id="panel-5" role="region" aria-labelledby="trigger-5">
+          <div class="accordion__content">
+            <p>The app runs in any modern browser and ships as native desktop apps for macOS and Windows. Mobile companion apps for iOS and Android are available for viewing and quick edits.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <h2 class="accordion__heading">
+          <button class="accordion__trigger" id="trigger-6" aria-expanded="false" aria-controls="panel-6">
+            <span>Can I collaborate with my team?</span>
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div class="accordion__panel" id="panel-6" role="region" aria-labelledby="trigger-6">
+          <div class="accordion__content">
+            <p>Absolutely. Team plans support real-time collaboration, shared folders, granular permissions, and commenting so everyone stays aligned without emailing files back and forth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
