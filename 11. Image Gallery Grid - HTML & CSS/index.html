@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prism — Curated Generative Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Exhibition No. 07</p>
+      <h1 class="title">Prism</h1>
+      <p class="lede">A curated set of generative studies — each composed entirely in code. No pixels imported, only shapes, gradients and geometry.</p>
+      <nav class="filters" aria-label="Gallery sections">
+        <span class="chip chip--active">All Works</span>
+        <span class="chip">Geometry</span>
+        <span class="chip">Gradient</span>
+        <span class="chip">Pattern</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <ul class="gallery" role="list">
+      <li>
+        <figure class="tile tile--wide" tabindex="0" aria-label="Solar Drift, gradient study">
+          <div class="art art--solar" aria-hidden="true">
+            <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <circle cx="140" cy="70" r="46" fill="rgba(255,255,255,.85)"></circle>
+              <circle cx="140" cy="70" r="70" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5"></circle>
+              <circle cx="140" cy="70" r="92" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"></circle>
+            </svg>
+          </div>
+          <figcaption class="caption">
+            <span class="caption__tag">Gradient</span>
+            <span class="caption__title">Solar Drift</span>
+            <span class="caption__desc">Warm dawn field with a bleeding aperture.</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="tile" tabindex="0" aria-label="Grid Lattice, geometry study">
+          <div class="art art--lattice" aria-hidden="true">
+            <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <g stroke="rgba(255,255,255,.55)" stroke-width="2" fill="none">
+                <path d="M40 20 L160 20 L120 180 L80 180 Z"></path>
+                <path d="M20 100 L180 100"></path>
+                <path d="M100 20 L100 180"></path>
+              </g>
+              <circle cx="100" cy="100" r="8" fill="#fff"></circle>
+            </svg>
+          </div>
+          <figcaption class="caption">
+            <span class="caption__tag">Geometry</span>
+            <span class="caption__title">Grid Lattice</span>
+            <span class="caption__desc">A vanishing frame folded onto itself.</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="tile" tabindex="0" aria-label="Tidal, gradient study">
+          <div class="art art--tidal" aria-hidden="true">
+            <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <g fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2">
+                <path d="M-10 120 Q50 90 100 120 T210 120"></path>
+                <path d="M-10 140 Q50 110 100 140 T210 140"></path>
+                <path d="M-10 160 Q50 130 100 160 T210 160"></path>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="caption">
+            <span class="caption__tag">Gradient</span>
+            <span class="caption__title">Tidal</span>
+            <span class="caption__desc">Cool currents layered into a horizon.</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="tile tile--tall" tabindex="0" aria-label="Monolith, geometry study">
+          <div class="art art--monolith" aria-hidden="true">
+            <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect x="70" y="30" width="60" height="140" fill="rgba(0,0,0,.25)"></rect>
+              <rect x="70" y="30" width="60" height="140" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2"></rect>
+              <path d="M70 30 L100 12 L130 30" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2"></path>
+            </svg>
+          </div>
+          <figcaption class="caption">
+            <span class="caption__tag">Geometry</span>
+            <span class="caption__title">Monolith</span>
+            <span class="caption__desc">A single slab against a dusk gradient.</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="tile" tabindex="0" aria-label="Confetti, pattern study">
+          <div class="art art--confetti" aria-hidden="true"></div>
+          <figcaption class="caption">
+            <span class="caption__tag">Pattern</span>
+            <span class="caption__title">Confetti</span>
+            <span class="caption__desc">Dotted noise on a soft mint plane.</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="tile" tabindex="0" aria-label="Ember Rings, geometry study">
+          <div class="art art--ember" aria-hidden="true">
+            <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <g fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2">
+                <circle cx="100" cy="100" r="24"></circle>
+                <circle cx="100" cy="100" r="48"></circle>
+                <circle cx="100" cy="100" r="72"></circle>
+                <circle cx="100" cy="100" r="96"></circle>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="caption">
+            <span class="caption__tag">Geometry</span>
+            <span class="caption__title">Ember Rings</span>
+            <span class="caption__desc">Concentric heat radiating outward.</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="tile tile--wide" tabindex="0" aria-label="Meridian, gradient study">
+          <div class="art art--meridian" aria-hidden="true">
+            <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <g stroke="rgba(255,255,255,.4)" stroke-width="1.5" fill="none">
+                <path d="M0 40 L200 60"></path>
+                <path d="M0 90 L200 100"></path>
+                <path d="M0 140 L200 130"></path>
+              </g>
+              <polygon points="100,70 128,120 72,120" fill="rgba(255,255,255,.85)"></polygon>
+            </svg>
+          </div>
+          <figcaption class="caption">
+            <span class="caption__tag">Gradient</span>
+            <span class="caption__title">Meridian</span>
+            <span class="caption__desc">A prism suspended over drawn latitudes.</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="tile" tabindex="0" aria-label="Checkerfade, pattern study">
+          <div class="art art--check" aria-hidden="true"></div>
+          <figcaption class="caption">
+            <span class="caption__tag">Pattern</span>
+            <span class="caption__title">Checkerfade</span>
+            <span class="caption__desc">A dissolving grid in slate and cream.</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="tile" tabindex="0" aria-label="Bloom, geometry study">
+          <div class="art art--bloom" aria-hidden="true">
+            <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <g fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2">
+                <ellipse cx="100" cy="100" rx="70" ry="26"></ellipse>
+                <ellipse cx="100" cy="100" rx="70" ry="26" transform="rotate(60 100 100)"></ellipse>
+                <ellipse cx="100" cy="100" rx="70" ry="26" transform="rotate(120 100 100)"></ellipse>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="caption">
+            <span class="caption__tag">Geometry</span>
+            <span class="caption__title">Bloom</span>
+            <span class="caption__desc">Three petals traced in orbit.</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="tile" tabindex="0" aria-label="Static, pattern study">
+          <div class="art art--stripes" aria-hidden="true"></div>
+          <figcaption class="caption">
+            <span class="caption__tag">Pattern</span>
+            <span class="caption__title">Static</span>
+            <span class="caption__desc">Diagonal ribbons at a steady cadence.</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="tile" tabindex="0" aria-label="Nightfall, gradient study">
+          <div class="art art--night" aria-hidden="true">
+            <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <circle cx="150" cy="55" r="30" fill="rgba(255,255,255,.9)"></circle>
+              <circle cx="138" cy="48" r="30" fill="rgba(20,20,40,.55)"></circle>
+              <g fill="#fff">
+                <circle cx="50" cy="60" r="1.6"></circle>
+                <circle cx="80" cy="40" r="1.2"></circle>
+                <circle cx="40" cy="110" r="1.4"></circle>
+                <circle cx="95" cy="90" r="1"></circle>
+                <circle cx="30" cy="150" r="1.5"></circle>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="caption">
+            <span class="caption__tag">Gradient</span>
+            <span class="caption__title">Nightfall</span>
+            <span class="caption__desc">A crescent adrift in a deep field.</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="tile" tabindex="0" aria-label="Interlock, geometry study">
+          <div class="art art--interlock" aria-hidden="true">
+            <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <g fill="none" stroke="rgba(255,255,255,.65)" stroke-width="2">
+                <rect x="45" y="45" width="70" height="70"></rect>
+                <rect x="85" y="85" width="70" height="70"></rect>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="caption">
+            <span class="caption__tag">Geometry</span>
+            <span class="caption__title">Interlock</span>
+            <span class="caption__desc">Two frames sharing a corner of space.</span>
+          </figcaption>
+        </figure>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Prism — twelve studies rendered from pure CSS &amp; SVG. Hover or focus any work to read its note.</p>
+    </div>
+  </footer>
+</body>
+</html>
