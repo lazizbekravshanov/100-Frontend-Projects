@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Holy Grail Layout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Header -->
+    <header class="header">
+      <a class="header__brand" href="#main">Meridian<span class="header__dot">.</span></a>
+      <nav class="header__nav" aria-label="Primary">
+        <a href="#main">Docs</a>
+        <a href="#main">Guides</a>
+        <a href="#main">Changelog</a>
+        <a class="header__cta" href="#main">Sign in</a>
+      </nav>
+    </header>
+
+    <!-- Body: three flex columns -->
+    <div class="body">
+      <!-- Left nav -->
+      <nav class="nav" aria-label="Section">
+        <p class="nav__label">Getting started</p>
+        <ul class="nav__list">
+          <li><a href="#main" class="is-active">Introduction</a></li>
+          <li><a href="#main">Installation</a></li>
+          <li><a href="#main">Configuration</a></li>
+        </ul>
+        <p class="nav__label">Core concepts</p>
+        <ul class="nav__list">
+          <li><a href="#main">Layout model</a></li>
+          <li><a href="#main">Responsive design</a></li>
+          <li><a href="#main">Accessibility</a></li>
+        </ul>
+      </nav>
+
+      <!-- Center content -->
+      <main class="content" id="main">
+        <span class="content__eyebrow">Layout patterns</span>
+        <h1 class="content__title">The Holy Grail, built with Flexbox</h1>
+        <p class="content__lead">
+          A full-height page with a fixed header and footer, a left navigation
+          rail, a fluid center column, and a supporting aside — all held together
+          with nothing but flex containers.
+        </p>
+
+        <section class="card">
+          <h2>How it works</h2>
+          <p>
+            The page is a vertical flex column that fills the viewport. The middle
+            region grows to consume leftover space, then splits into three
+            horizontal flex children. The center column takes <code>flex: 1</code>,
+            so it expands while the side rails keep a fixed width.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Why it holds up</h2>
+          <p>
+            No absolute positioning, no floats, no fixed heights. Because the
+            columns are flex siblings, they always match heights automatically,
+            and the footer stays pinned to the bottom even when content is short.
+          </p>
+        </section>
+
+        <div class="content__grid">
+          <article class="mini">
+            <h3>Fluid center</h3>
+            <p>Grows and shrinks with the viewport for comfortable reading widths.</p>
+          </article>
+          <article class="mini">
+            <h3>Steady rails</h3>
+            <p>Navigation and aside keep predictable widths on the desktop breakpoint.</p>
+          </article>
+        </div>
+      </main>
+
+      <!-- Right aside -->
+      <aside class="aside" aria-label="On this page">
+        <p class="aside__label">On this page</p>
+        <ul class="aside__toc">
+          <li><a href="#main">How it works</a></li>
+          <li><a href="#main">Why it holds up</a></li>
+          <li><a href="#main">Fluid center</a></li>
+          <li><a href="#main">Steady rails</a></li>
+        </ul>
+        <div class="aside__note">
+          <p class="aside__note-title">Tip</p>
+          <p>Resize the window below 768px to watch the layout collapse into a single column.</p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2026 Meridian Docs</p>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#main">Privacy</a>
+        <a href="#main">Terms</a>
+        <a href="#main">Status</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
