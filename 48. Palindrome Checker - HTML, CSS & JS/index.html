@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palindrome Checker</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Palindrome Checker</h1>
+      <p class="app__subtitle">Reads the same forwards and backwards — case, spaces and punctuation ignored.</p>
+    </header>
+
+    <section class="field">
+      <label class="field__label" for="input">Enter a word or phrase</label>
+      <input
+        class="field__input"
+        id="input"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="e.g. A man, a plan, a canal: Panama"
+        aria-describedby="result">
+    </section>
+
+    <section class="result" id="result" role="status" aria-live="polite" data-state="idle">
+      <span class="result__icon" aria-hidden="true" id="resultIcon">•</span>
+      <span class="result__text" id="resultText">Start typing to check.</span>
+    </section>
+
+    <section class="normalized" id="normalizedBox" hidden>
+      <span class="normalized__label">Normalized</span>
+      <code class="normalized__value" id="normalized"></code>
+    </section>
+
+    <section class="examples" aria-label="Try an example">
+      <span class="examples__label">Try:</span>
+      <ul class="examples__list">
+        <li><button class="tag" type="button" data-example="racecar">racecar</button></li>
+        <li><button class="tag" type="button" data-example="Was it a car or a cat I saw?">Was it a car or a cat I saw?</button></li>
+        <li><button class="tag" type="button" data-example="Never odd or even">Never odd or even</button></li>
+        <li><button class="tag" type="button" data-example="hello world">hello world</button></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
