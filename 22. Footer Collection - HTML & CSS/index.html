@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="intro">
+      <p class="intro__eyebrow">UI Collection</p>
+      <h1 class="intro__title">Footer designs</h1>
+      <p class="intro__copy">Four production-ready footer patterns, each self-contained
+        and responsive down to 375px. Copy whichever fits your layout.</p>
+    </header>
+
+    <!-- 1. Multi-column footer -->
+    <section class="showcase" aria-labelledby="label-1">
+      <p class="showcase__label" id="label-1">01 — Multi-column footer</p>
+      <footer class="ftr ftr--columns">
+        <div class="ftr__inner">
+          <div class="ftr__brandcol">
+            <a class="ftr__brand" href="#">
+              <span class="ftr__logo" aria-hidden="true">◆</span> Northpeak
+            </a>
+            <p class="ftr__tagline">Tools for teams who ship. Built quietly, shipped often.</p>
+            <ul class="ftr__social" aria-label="Northpeak on social">
+              <li><a href="#" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2.5h3.3l-7.2 8.24L23.5 21.5h-6.6l-5.17-6.76-5.92 6.76H2.5l7.7-8.8L2 2.5h6.77l4.67 6.18zm-1.16 17h1.83L7.2 4.38H5.24z"/></svg></a></li>
+              <li><a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a></li>
+              <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.49 2.49 0 0 1 4.98 3.5zM3 8.98h4v12H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06c4 0 4.75 2.64 4.75 6.06v6.36h-4v-5.64c0-1.34 0-3.06-1.87-3.06s-2.15 1.46-2.15 2.96v5.74H9z"/></svg></a></li>
+            </ul>
+          </div>
+          <nav class="ftr__nav" aria-label="Footer navigation">
+            <div class="ftr__group">
+              <h2 class="ftr__heading">Product</h2>
+              <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Integrations</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Changelog</a></li>
+              </ul>
+            </div>
+            <div class="ftr__group">
+              <h2 class="ftr__heading">Company</h2>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Press</a></li>
+              </ul>
+            </div>
+            <div class="ftr__group">
+              <h2 class="ftr__heading">Resources</h2>
+              <ul>
+                <li><a href="#">Docs</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Status</a></li>
+                <li><a href="#">API</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="ftr__bottom">
+          <p>© 2026 Northpeak Labs, Inc.</p>
+          <ul class="ftr__legal">
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+      </footer>
+    </section>
+
+    <!-- 2. Newsletter footer -->
+    <section class="showcase" aria-labelledby="label-2">
+      <p class="showcase__label" id="label-2">02 — Newsletter footer</p>
+      <footer class="ftr ftr--news">
+        <div class="ftr__inner ftr__news-top">
+          <div class="ftr__news-copy">
+            <h2 class="ftr__news-title">Stay in the loop</h2>
+            <p>One thoughtful email a month. Product news, no spam, unsubscribe anytime.</p>
+          </div>
+          <form class="ftr__form" action="#" method="post">
+            <label class="sr-only" for="news-email">Email address</label>
+            <input class="ftr__input" type="email" id="news-email" name="email"
+                   placeholder="you@company.com" autocomplete="email" required>
+            <button class="ftr__submit" type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="ftr__bottom ftr__bottom--news">
+          <a class="ftr__brand" href="#"><span class="ftr__logo" aria-hidden="true">✳</span> Almanac</a>
+          <nav aria-label="Footer links">
+            <ul class="ftr__inline">
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Docs</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+          <p class="ftr__copy-muted">© 2026 Almanac</p>
+        </div>
+      </footer>
+    </section>
+
+    <!-- 3. App-download footer -->
+    <section class="showcase" aria-labelledby="label-3">
+      <p class="showcase__label" id="label-3">03 — App-download footer</p>
+      <footer class="ftr ftr--app">
+        <div class="ftr__inner ftr__app-inner">
+          <div class="ftr__app-copy">
+            <a class="ftr__brand ftr__brand--light" href="#"><span class="ftr__logo" aria-hidden="true">◉</span> Tempo</a>
+            <p>Track habits and build momentum. Take Tempo everywhere.</p>
+            <div class="ftr__stores">
+              <a class="store" href="#" aria-label="Download on the App Store">
+                <svg class="store__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 12.6c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.6-1.3-.1-2.5.8-3.1.8-.6 0-1.6-.7-2.7-.7-1.4 0-2.7.8-3.4 2.1-1.5 2.5-.4 6.3 1 8.4.7 1 1.5 2.1 2.6 2.1 1 0 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.6 1.1 0 1.8-1 2.5-2 .8-1.2 1.1-2.3 1.1-2.4-.1 0-2.1-.8-2.2-3.3zM14.6 6.3c.6-.7 1-1.7.9-2.6-.8 0-1.9.5-2.5 1.3-.5.6-1 1.6-.9 2.5.9.1 1.8-.4 2.5-1.2z"/></svg>
+                <span class="store__text"><small>Download on the</small><strong>App Store</strong></span>
+              </a>
+              <a class="store" href="#" aria-label="Get it on Google Play">
+                <svg class="store__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.5.7-.5 1.3v16.8c0 .6.2 1 .5 1.3l.1.1L13 12.6v-.2L3.7 2.2zM16.3 15.9l-2.9-2.9L14.8 12l1.5-.8 3.6 2c1 .6 1 1.5 0 2.1l-3.6 2zM13.4 12.4l2.9 2.9-9.3 5.3c-.5.3-1 .3-1.4 0zM6 3.8c-.4-.3-.9-.3-1.4 0l9.3 5.3-2.9 2.9z"/></svg>
+                <span class="store__text"><small>Get it on</small><strong>Google Play</strong></span>
+              </a>
+            </div>
+          </div>
+          <nav class="ftr__app-nav" aria-label="Footer navigation">
+            <div class="ftr__group">
+              <h2 class="ftr__heading ftr__heading--light">Explore</h2>
+              <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Premium</a></li>
+                <li><a href="#">Community</a></li>
+              </ul>
+            </div>
+            <div class="ftr__group">
+              <h2 class="ftr__heading ftr__heading--light">Help</h2>
+              <ul>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="ftr__bottom ftr__bottom--app">
+          <p>© 2026 Tempo App. Made for focus.</p>
+        </div>
+      </footer>
+    </section>
+
+    <!-- 4. Minimal centered footer -->
+    <section class="showcase" aria-labelledby="label-4">
+      <p class="showcase__label" id="label-4">04 — Minimal centered footer</p>
+      <footer class="ftr ftr--minimal">
+        <a class="ftr__brand ftr__brand--center" href="#"><span class="ftr__logo" aria-hidden="true">△</span> Cairn</a>
+        <nav aria-label="Footer navigation">
+          <ul class="ftr__inline ftr__inline--center">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Studio</a></li>
+            <li><a href="#">Journal</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <ul class="ftr__social ftr__social--center" aria-label="Cairn on social">
+          <li><a href="#" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2.5h3.3l-7.2 8.24L23.5 21.5h-6.6l-5.17-6.76-5.92 6.76H2.5l7.7-8.8L2 2.5h6.77l4.67 6.18zm-1.16 17h1.83L7.2 4.38H5.24z"/></svg></a></li>
+          <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.22 1 .48 1.4.9.42.4.68.8.9 1.4.17.4.36 1 .42 2.2.07 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.22.6-.48 1-.9 1.4-.4.42-.8.68-1.4.9-.4.17-1 .36-2.2.42-1.3.07-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.22-1-.48-1.4-.9-.42-.4-.68-.8-.9-1.4-.17-.4-.36-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.4-.42.8-.68 1.4-.9.4-.17 1-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 3.13A6.67 6.67 0 1 0 18.67 12 6.67 6.67 0 0 0 12 5.33zm0 11A4.33 4.33 0 1 1 16.33 12 4.33 4.33 0 0 1 12 16.33zm6.9-11.3a1.56 1.56 0 1 1-1.56-1.55 1.56 1.56 0 0 1 1.56 1.55z"/></svg></a></li>
+          <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.49 2.49 0 0 1 4.98 3.5zM3 8.98h4v12H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06c4 0 4.75 2.64 4.75 6.06v6.36h-4v-5.64c0-1.34 0-3.06-1.87-3.06s-2.15 1.46-2.15 2.96v5.74H9z"/></svg></a></li>
+        </ul>
+        <p class="ftr__copy-muted">© 2026 Cairn Studio. All rights reserved.</p>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
