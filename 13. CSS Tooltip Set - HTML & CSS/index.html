@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Tooltip Set</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <p class="eyebrow">Pure CSS · No JavaScript</p>
+      <h1 class="title">CSS Tooltip Set</h1>
+      <p class="lede">
+        Accessible, four-direction tooltips built entirely with data-attributes and
+        pseudo-elements. Hover a trigger with the pointer, or tab to it with the
+        keyboard — the tooltip appears either way.
+      </p>
+    </header>
+
+    <main class="main">
+      <section class="showcase" aria-labelledby="directions-heading">
+        <h2 id="directions-heading" class="section-title">Four directions</h2>
+        <p class="section-note">
+          Each trigger declares its bubble text with <code>data-tooltip</code> and its
+          placement with <code>data-pos</code>. Try the keyboard: press
+          <kbd>Tab</kbd> to move focus and reveal each tooltip.
+        </p>
+
+        <ul class="grid" role="list">
+          <li class="cell">
+            <span class="cell__label">Top</span>
+            <button class="tooltip" data-pos="top"
+              data-tooltip="Appears above the trigger">
+              Hover / focus me
+            </button>
+          </li>
+          <li class="cell">
+            <span class="cell__label">Right</span>
+            <button class="tooltip" data-pos="right"
+              data-tooltip="Appears to the right">
+              Hover / focus me
+            </button>
+          </li>
+          <li class="cell">
+            <span class="cell__label">Bottom</span>
+            <button class="tooltip" data-pos="bottom"
+              data-tooltip="Appears below the trigger">
+              Hover / focus me
+            </button>
+          </li>
+          <li class="cell">
+            <span class="cell__label">Left</span>
+            <button class="tooltip" data-pos="left"
+              data-tooltip="Appears to the left">
+              Hover / focus me
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <section class="showcase" aria-labelledby="inline-heading">
+        <h2 id="inline-heading" class="section-title">Inline in context</h2>
+        <p class="prose">
+          Tooltips work on any focusable element, not just buttons. Here they annotate
+          words inside a paragraph. The
+          <button class="tooltip tooltip--inline" data-pos="top"
+            data-tooltip="A small overlay that gives extra context on demand">tooltip</button>
+          is a lightweight way to explain a
+          <button class="tooltip tooltip--inline" data-pos="bottom"
+            data-tooltip="Shown only when needed, so the layout stays uncluttered">term</button>
+          without cluttering the interface, and it stays fully reachable by
+          <button class="tooltip tooltip--inline" data-pos="right"
+            data-tooltip="Every trigger is a real button, so Tab and Enter both work">keyboard</button>.
+        </p>
+      </section>
+
+      <section class="showcase" aria-labelledby="usage-heading">
+        <h2 id="usage-heading" class="section-title">How it works</h2>
+        <div class="usage">
+          <ol class="usage__list">
+            <li>Add <code>data-tooltip="Your text"</code> to any focusable element.</li>
+            <li>Set the placement with <code>data-pos="top|right|bottom|left"</code>.</li>
+            <li>
+              A <code>::before</code> renders the bubble; an <code>::after</code> draws the
+              arrow. Both fade in on <code>:hover</code> and <code>:focus-visible</code>.
+            </li>
+          </ol>
+          <pre class="usage__code"><code>&lt;button
+  class="tooltip"
+  data-pos="top"
+  data-tooltip="Appears above"&gt;
+  Hover / focus me
+&lt;/button&gt;</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>CSS-only tooltips · keyboard accessible · responsive to 375px</p>
+    </footer>
+  </div>
+</body>
+</html>
