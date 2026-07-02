@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="clock">
+    <header class="clock__header">
+      <h1 class="clock__title">Digital Clock</h1>
+      <p class="clock__day" id="day">—</p>
+    </header>
+
+    <section class="clock__display" aria-live="polite">
+      <div class="clock__time">
+        <span id="time">--:--:--</span>
+        <span class="clock__meridiem" id="meridiem"></span>
+      </div>
+      <p class="clock__date" id="date">—</p>
+    </section>
+
+    <footer class="clock__footer">
+      <span class="clock__mode-label" id="mode-label">24-hour</span>
+      <button class="toggle" id="format-toggle" role="switch" aria-checked="false"
+        aria-label="Toggle between 12-hour and 24-hour format">
+        <span class="toggle__thumb"></span>
+      </button>
+    </footer>
+  </main>
+</body>
+</html>
