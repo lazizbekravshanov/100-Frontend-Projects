@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="game">
+    <header class="game__header">
+      <h1 class="game__title">Snake</h1>
+      <p class="game__hint">Arrow keys or WASD to move · Space to pause</p>
+    </header>
+
+    <section class="scoreboard" aria-label="Scores">
+      <div class="scoreboard__item">
+        <span class="scoreboard__label">Score</span>
+        <span class="scoreboard__value" id="score">0</span>
+      </div>
+      <div class="scoreboard__item">
+        <span class="scoreboard__label">Best</span>
+        <span class="scoreboard__value" id="highScore">0</span>
+      </div>
+    </section>
+
+    <div class="board">
+      <canvas id="canvas" width="400" height="400" aria-label="Snake game board" role="img"></canvas>
+      <div class="overlay" id="overlay">
+        <p class="overlay__title" id="overlayTitle">Ready?</p>
+        <p class="overlay__text" id="overlayText">Press Start or any arrow key to play.</p>
+        <button class="btn" id="primaryBtn" type="button">Start game</button>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn btn--ghost" id="pauseBtn" type="button">Pause</button>
+      <button class="btn btn--ghost" id="restartBtn" type="button">Restart</button>
+    </div>
+
+    <nav class="dpad" aria-label="Direction controls">
+      <button class="dpad__btn dpad__btn--up" data-dir="up" type="button" aria-label="Move up">↑</button>
+      <button class="dpad__btn dpad__btn--left" data-dir="left" type="button" aria-label="Move left">←</button>
+      <button class="dpad__btn dpad__btn--down" data-dir="down" type="button" aria-label="Move down">↓</button>
+      <button class="dpad__btn dpad__btn--right" data-dir="right" type="button" aria-label="Move right">→</button>
+    </nav>
+  </main>
+</body>
+</html>
