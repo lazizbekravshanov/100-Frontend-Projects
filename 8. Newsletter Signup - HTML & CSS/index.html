@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Weekly Draft — Newsletter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="nl-title">
+      <span class="card__badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        The Weekly Draft
+      </span>
+
+      <h1 class="card__title" id="nl-title">One thoughtful email, every Sunday.</h1>
+      <p class="card__sub">
+        Ideas on design, writing, and building calm software — no fluff, no spam.
+        Join 12,000 makers who read it with their morning coffee.
+      </p>
+
+      <form class="form" action="#" method="post" novalidate>
+        <label class="form__label" for="email">Email address</label>
+        <div class="form__row">
+          <input
+            class="form__input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+          <button class="btn" type="submit">Subscribe</button>
+        </div>
+        <p class="form__note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          We respect your inbox. Unsubscribe anytime — no questions asked.
+        </p>
+      </form>
+
+      <ul class="perks">
+        <li class="perk">
+          <span class="perk__dot" aria-hidden="true"></span>
+          Actionable ideas, not think-pieces
+        </li>
+        <li class="perk">
+          <span class="perk__dot" aria-hidden="true"></span>
+          A curated link worth your time
+        </li>
+        <li class="perk">
+          <span class="perk__dot" aria-hidden="true"></span>
+          Free, forever
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
