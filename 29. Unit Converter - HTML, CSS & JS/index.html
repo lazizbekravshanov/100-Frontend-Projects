@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="converter">
+    <header class="converter__header">
+      <h1 class="converter__title">Unit Converter</h1>
+      <p class="converter__subtitle">Length, weight and temperature.</p>
+    </header>
+
+    <nav class="converter__tabs" id="categories" aria-label="Conversion categories">
+      <button class="tab is-active" data-category="length">Length</button>
+      <button class="tab" data-category="weight">Weight</button>
+      <button class="tab" data-category="temperature">Temperature</button>
+    </nav>
+
+    <section class="converter__panel">
+      <div class="unit">
+        <label for="from-value">From</label>
+        <div class="unit__row">
+          <input type="number" id="from-value" value="1" inputmode="decimal">
+          <select id="from-unit" aria-label="Convert from unit"></select>
+        </div>
+      </div>
+
+      <button class="swap" id="swap" aria-label="Swap units">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 10l5-5 5 5"></path><path d="M12 5v14"></path>
+        </svg>
+      </button>
+
+      <div class="unit">
+        <label for="to-value">To</label>
+        <div class="unit__row">
+          <input type="number" id="to-value" readonly aria-label="Converted result">
+          <select id="to-unit" aria-label="Convert to unit"></select>
+        </div>
+      </div>
+    </section>
+
+    <p class="converter__equation" id="equation" aria-live="polite"></p>
+  </main>
+</body>
+</html>
