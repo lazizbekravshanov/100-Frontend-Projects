@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <section class="generator" aria-label="Password generator">
+      <h1 class="generator__title">Password Generator</h1>
+      <p class="generator__subtitle">Create a strong, random password.</p>
+
+      <div class="output">
+        <output class="output__value" id="password" aria-live="polite">Click generate</output>
+        <button type="button" class="output__copy" id="copyBtn" aria-label="Copy password">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+        </button>
+      </div>
+      <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+
+      <div class="strength">
+        <div class="strength__bars" id="strengthBars" role="img" aria-label="Password strength">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <span class="strength__label" id="strengthLabel">—</span>
+      </div>
+
+      <div class="control">
+        <div class="control__row">
+          <label for="length">Length</label>
+          <span class="control__value" id="lengthValue">16</span>
+        </div>
+        <input type="range" id="length" min="4" max="40" value="16" step="1">
+      </div>
+
+      <fieldset class="options">
+        <legend class="visually-hidden">Character options</legend>
+        <label class="option">
+          <input type="checkbox" id="uppercase" checked>
+          <span>Uppercase (A–Z)</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" id="lowercase" checked>
+          <span>Lowercase (a–z)</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" id="numbers" checked>
+          <span>Numbers (0–9)</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" id="symbols">
+          <span>Symbols (!@#$)</span>
+        </label>
+      </fieldset>
+
+      <button type="button" class="btn btn--primary" id="generateBtn">Generate password</button>
+    </section>
+  </main>
+</body>
+</html>
