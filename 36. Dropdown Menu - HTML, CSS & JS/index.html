@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="#">Northwind</a>
+
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#">Overview</a></li>
+
+        <li class="menu" data-menu>
+          <button
+            class="nav__link menu__trigger"
+            id="products-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="products-menu"
+          >
+            Products
+            <svg class="menu__chevron" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+              <path d="M5 7.5 10 12.5 15 7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <ul class="menu__panel" id="products-menu" role="menu" aria-labelledby="products-trigger">
+            <li role="none"><a role="menuitem" tabindex="-1" href="#">Analytics</a></li>
+            <li role="none"><a role="menuitem" tabindex="-1" href="#">Automation</a></li>
+
+            <li class="submenu" role="none" data-submenu>
+              <button
+                class="menu__item submenu__trigger"
+                role="menuitem"
+                tabindex="-1"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="integrations-menu"
+              >
+                Integrations
+                <svg class="submenu__arrow" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+                  <path d="M7.5 5 12.5 10 7.5 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <ul class="menu__panel menu__panel--sub" id="integrations-menu" role="menu">
+                <li role="none"><a role="menuitem" tabindex="-1" href="#">Slack</a></li>
+                <li role="none"><a role="menuitem" tabindex="-1" href="#">GitHub</a></li>
+                <li role="none"><a role="menuitem" tabindex="-1" href="#">Zapier</a></li>
+              </ul>
+            </li>
+
+            <li role="none"><a role="menuitem" tabindex="-1" href="#">Reporting</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav__link" href="#">Pricing</a></li>
+        <li><a class="nav__link" href="#">Docs</a></li>
+      </ul>
+
+      <a class="nav__cta" href="#">Sign in</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <p class="hero__eyebrow">Accessible component</p>
+      <h1 class="hero__title">Dropdown Menu</h1>
+      <p class="hero__lead">
+        Open the <strong>Products</strong> menu in the navigation bar. It opens on click,
+        closes on outside-click or <kbd>Esc</kbd>, supports arrow-key navigation, and exposes
+        a nested submenu. Every trigger reports its state with <code>aria-expanded</code>.
+      </p>
+      <ul class="hero__hints">
+        <li><kbd>↓</kbd> / <kbd>↑</kbd> move between items</li>
+        <li><kbd>→</kbd> open submenu · <kbd>←</kbd> close it</li>
+        <li><kbd>Esc</kbd> close · <kbd>Home</kbd>/<kbd>End</kbd> jump</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
