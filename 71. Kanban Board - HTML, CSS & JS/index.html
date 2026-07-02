@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+              <rect x="3" y="3" width="5" height="18" rx="1.5" fill="currentColor" opacity="0.35" />
+              <rect x="9.5" y="3" width="5" height="12" rx="1.5" fill="currentColor" opacity="0.6" />
+              <rect x="16" y="3" width="5" height="8" rx="1.5" fill="currentColor" />
+            </svg>
+          </span>
+          <div class="brand__text">
+            <h1 class="brand__title">Kanban Board</h1>
+            <p class="brand__subtitle">Plan, track, and ship your work.</p>
+          </div>
+        </div>
+        <p class="site-header__hint">Drag cards between columns. Everything saves automatically.</p>
+      </div>
+    </header>
+
+    <main class="board" id="board">
+      <!-- Columns are rendered by script.js -->
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with the native HTML Drag and Drop API. State persists in your browser.</p>
+    </footer>
+
+    <!-- Template for a single column -->
+    <template id="column-template">
+      <section class="column" aria-labelledby="">
+        <div class="column__header">
+          <div class="column__heading">
+            <span class="column__dot" aria-hidden="true"></span>
+            <h2 class="column__title"></h2>
+            <span class="column__count" aria-hidden="true">0</span>
+          </div>
+        </div>
+        <ul class="column__list" role="list"></ul>
+        <p class="column__empty">No cards yet.</p>
+        <form class="add-card" autocomplete="off">
+          <label class="visually-hidden">Add a card</label>
+          <input
+            class="add-card__input"
+            type="text"
+            placeholder="Add a card…"
+            maxlength="200"
+          />
+          <button class="add-card__submit" type="submit" aria-label="Add card">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+              <path
+                d="M12 5v14M5 12h14"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </form>
+      </section>
+    </template>
+
+    <!-- Template for a single card -->
+    <template id="card-template">
+      <li class="card" draggable="true" tabindex="0">
+        <p class="card__text"></p>
+        <button class="card__delete" type="button" aria-label="Delete card">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
+            <path
+              d="M6 6l12 12M18 6L6 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </li>
+    </template>
+  </body>
+</html>
