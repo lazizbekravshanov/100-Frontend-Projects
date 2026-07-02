@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <section class="quiz" aria-label="Quiz">
+      <header class="quiz__header">
+        <h1 class="quiz__title">General Knowledge Quiz</h1>
+        <p class="quiz__subtitle" id="progressText">Question 1 of 10</p>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Quiz progress">
+          <div class="progress__bar" id="progressBar"></div>
+        </div>
+      </header>
+
+      <div class="quiz__body" id="quizBody">
+        <h2 class="quiz__question" id="questionText">Loading…</h2>
+        <ul class="options" id="options"></ul>
+        <p class="quiz__feedback" id="feedback" aria-live="polite"></p>
+      </div>
+
+      <footer class="quiz__footer">
+        <span class="quiz__score" id="scoreText">Score: 0</span>
+        <button type="button" class="btn btn--primary" id="nextBtn" disabled>Next</button>
+      </footer>
+    </section>
+
+    <section class="result" id="result" hidden aria-label="Results">
+      <h2 class="result__title">Quiz complete</h2>
+      <p class="result__score" id="finalScore">0 / 10</p>
+      <p class="result__message" id="resultMessage"></p>
+      <button type="button" class="btn btn--primary" id="restartBtn">Restart quiz</button>
+    </section>
+  </main>
+</body>
+</html>
