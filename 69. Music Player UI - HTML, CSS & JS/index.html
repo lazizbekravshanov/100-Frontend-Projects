@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="player" aria-label="Music player">
+    <div class="art" id="art" aria-hidden="true">
+      <svg viewBox="0 0 120 120" class="art__disc">
+        <defs>
+          <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#a78bfa" />
+            <stop offset="100%" stop-color="#6366f1" />
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="58" fill="url(#grad)" />
+        <circle cx="60" cy="60" r="40" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1" />
+        <circle cx="60" cy="60" r="30" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+        <circle cx="60" cy="60" r="12" fill="#18181b" />
+        <circle cx="60" cy="60" r="4" fill="#f4f4f5" />
+      </svg>
+    </div>
+
+    <div class="meta">
+      <h1 class="meta__title" id="trackTitle">—</h1>
+      <p class="meta__artist" id="trackArtist">—</p>
+    </div>
+
+    <div class="seek">
+      <input class="seek__range" id="seek" type="range" min="0" max="1000" value="0"
+             step="1" aria-label="Seek" />
+      <div class="seek__times">
+        <span id="currentTime">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="ctrl" id="prevBtn" type="button" aria-label="Previous track">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6h2v12H6zm3 6 9 6V6z" fill="currentColor"/></svg>
+      </button>
+      <button class="ctrl ctrl--play" id="playBtn" type="button" aria-label="Play">
+        <svg class="icon-play" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+        <svg class="icon-pause" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" hidden><path d="M7 5h4v14H7zm6 0h4v14h-4z" fill="currentColor"/></svg>
+      </button>
+      <button class="ctrl" id="nextBtn" type="button" aria-label="Next track">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M16 6h2v12h-2zM6 6l9 6-9 6z" fill="currentColor"/></svg>
+      </button>
+    </div>
+
+    <div class="volume">
+      <button class="volume__btn" id="muteBtn" type="button" aria-label="Mute">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9zm12 3a4 4 0 0 0-2-3.46v6.92A4 4 0 0 0 16 12z" fill="currentColor"/></svg>
+      </button>
+      <input class="volume__range" id="volume" type="range" min="0" max="100" value="70"
+             aria-label="Volume" />
+    </div>
+
+    <section class="playlist" aria-label="Playlist">
+      <h2 class="playlist__title">Up next</h2>
+      <ul class="playlist__list" id="playlist"></ul>
+    </section>
+  </main>
+</body>
+</html>
