@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sortable Table — Employee Directory</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="page__header">
+        <p class="eyebrow">Data Table</p>
+        <h1 class="page__title">Employee Directory</h1>
+        <p class="page__subtitle">
+          Sort by any column and filter the roster in real time.
+        </p>
+      </header>
+
+      <section class="toolbar" aria-label="Table controls">
+        <div class="search">
+          <svg
+            class="search__icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <line x1="16.5" y1="16.5" x2="21" y2="21" />
+          </svg>
+          <label class="visually-hidden" for="filter-input">Filter employees</label>
+          <input
+            id="filter-input"
+            class="search__input"
+            type="text"
+            placeholder="Filter by name, role or team…"
+            autocomplete="off"
+            aria-controls="employee-table"
+          />
+        </div>
+        <p class="result-count" id="result-count" aria-live="polite"></p>
+      </section>
+
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Employee data, scrollable">
+        <table class="data-table" id="employee-table">
+          <caption class="visually-hidden">
+            Employee directory sortable by name, role, team, salary and start date
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" aria-sort="none" data-key="name" data-type="text">
+                <button type="button" class="th-sort">
+                  <span class="th-sort__label">Name</span>
+                  <span class="th-sort__arrow" aria-hidden="true"></span>
+                </button>
+              </th>
+              <th scope="col" aria-sort="none" data-key="role" data-type="text">
+                <button type="button" class="th-sort">
+                  <span class="th-sort__label">Role</span>
+                  <span class="th-sort__arrow" aria-hidden="true"></span>
+                </button>
+              </th>
+              <th scope="col" aria-sort="none" data-key="team" data-type="text">
+                <button type="button" class="th-sort">
+                  <span class="th-sort__label">Team</span>
+                  <span class="th-sort__arrow" aria-hidden="true"></span>
+                </button>
+              </th>
+              <th scope="col" class="num" aria-sort="none" data-key="salary" data-type="number">
+                <button type="button" class="th-sort">
+                  <span class="th-sort__label">Salary</span>
+                  <span class="th-sort__arrow" aria-hidden="true"></span>
+                </button>
+              </th>
+              <th scope="col" aria-sort="none" data-key="start" data-type="date">
+                <button type="button" class="th-sort">
+                  <span class="th-sort__label">Start date</span>
+                  <span class="th-sort__arrow" aria-hidden="true"></span>
+                </button>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+
+        <p class="empty-state" id="empty-state" hidden>
+          No employees match your search.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
