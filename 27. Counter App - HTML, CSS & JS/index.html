@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="counter">
+    <header class="counter__header">
+      <h1 class="counter__title">Counter</h1>
+      <p class="counter__hint">Use the buttons or press <kbd>↑</kbd> <kbd>↓</kbd> <kbd>R</kbd></p>
+    </header>
+
+    <p class="counter__value" id="value" aria-live="polite">0</p>
+
+    <div class="counter__controls">
+      <button class="btn btn--circle" id="decrement" aria-label="Decrease by step">−</button>
+      <button class="btn btn--reset" id="reset">Reset</button>
+      <button class="btn btn--circle" id="increment" aria-label="Increase by step">+</button>
+    </div>
+
+    <div class="counter__step">
+      <label for="step">Step</label>
+      <input type="number" id="step" value="1" min="1" inputmode="numeric">
+    </div>
+  </main>
+</body>
+</html>
