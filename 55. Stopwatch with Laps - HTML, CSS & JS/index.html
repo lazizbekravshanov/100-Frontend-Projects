@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Stopwatch</h1>
+      <p class="app__subtitle">Time sessions and record laps.</p>
+    </header>
+
+    <section class="clock" aria-label="Elapsed time">
+      <time class="clock__display" id="display" aria-live="off">00:00.00</time>
+    </section>
+
+    <div class="controls">
+      <button class="btn btn--primary" type="button" id="start-stop">Start</button>
+      <button class="btn" type="button" id="lap" disabled>Lap</button>
+      <button class="btn" type="button" id="reset" disabled>Reset</button>
+    </div>
+
+    <section class="laps" aria-label="Recorded laps">
+      <div class="laps__head" id="laps-head" hidden>
+        <span>Lap</span>
+        <span>Lap time</span>
+        <span>Total</span>
+      </div>
+      <ol class="laps__list" id="laps-list"></ol>
+      <p class="empty-state" id="empty-state">
+        <span class="empty-state__mark" aria-hidden="true">⏱️</span>
+        No laps yet. Start the clock and tap Lap.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
