@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Art — Morning Brew</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="stage">
+    <figure class="art" aria-label="A steaming cup of coffee on a saucer, drawn entirely with CSS">
+      <!-- Steam -->
+      <div class="steam" aria-hidden="true">
+        <span class="steam__wisp steam__wisp--1"></span>
+        <span class="steam__wisp steam__wisp--2"></span>
+        <span class="steam__wisp steam__wisp--3"></span>
+      </div>
+
+      <!-- Cup -->
+      <div class="cup" aria-hidden="true">
+        <div class="cup__body">
+          <div class="cup__coffee"></div>
+          <div class="cup__shine"></div>
+        </div>
+        <div class="cup__handle"></div>
+      </div>
+
+      <!-- Saucer -->
+      <div class="saucer" aria-hidden="true"></div>
+
+      <figcaption class="art__caption">
+        <span class="art__eyebrow">Pure CSS Art</span>
+        <span class="art__title">Morning Brew</span>
+      </figcaption>
+    </figure>
+  </main>
+</body>
+</html>
