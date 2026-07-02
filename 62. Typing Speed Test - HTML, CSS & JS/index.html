@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="app__header">
+      <h1 class="app__title">Typing Speed Test</h1>
+      <p class="app__subtitle">Type the passage below. Your speed and accuracy update as you go.</p>
+    </header>
+
+    <main class="app__main">
+      <section class="stats" aria-label="Live statistics">
+        <div class="stat">
+          <span class="stat__value" id="time">0s</span>
+          <span class="stat__label">Time</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" id="wpm">0</span>
+          <span class="stat__label">WPM</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" id="accuracy">100%</span>
+          <span class="stat__label">Accuracy</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" id="errors">0</span>
+          <span class="stat__label">Errors</span>
+        </div>
+      </section>
+
+      <section class="passage" id="passage" aria-label="Text to type"></section>
+
+      <label class="visually-hidden" for="input">Type the passage here</label>
+      <textarea
+        class="input"
+        id="input"
+        rows="4"
+        placeholder="Start typing to begin the test…"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"></textarea>
+
+      <div class="controls">
+        <button class="btn btn--accent" id="restart" type="button">New Test</button>
+        <p class="controls__hint" id="doneMsg" role="status" aria-live="polite"></p>
+      </div>
+    </main>
+
+    <footer class="app__footer">
+      <p>WPM assumes a standard 5-character word. Accuracy counts correctly typed characters.</p>
+    </footer>
+  </div>
+</body>
+</html>
