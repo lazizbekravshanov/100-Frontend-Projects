@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Sidebar">
+      <div class="sidebar__brand">
+        <span class="sidebar__logo" aria-hidden="true">◧</span>
+        <span class="sidebar__name">Pulse</span>
+      </div>
+      <nav class="sidebar__nav" aria-label="Main">
+        <a href="#main" class="is-active"><span class="ico" aria-hidden="true">▤</span> Overview</a>
+        <a href="#main"><span class="ico" aria-hidden="true">▦</span> Analytics</a>
+        <a href="#main"><span class="ico" aria-hidden="true">◈</span> Customers</a>
+        <a href="#main"><span class="ico" aria-hidden="true">▧</span> Orders</a>
+        <a href="#main"><span class="ico" aria-hidden="true">◌</span> Reports</a>
+        <a href="#main"><span class="ico" aria-hidden="true">⚙</span> Settings</a>
+      </nav>
+      <div class="sidebar__foot">
+        <div class="avatar" aria-hidden="true">AR</div>
+        <div class="sidebar__user">
+          <span class="sidebar__user-name">Ada Reyes</span>
+          <span class="sidebar__user-role">Admin</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Overview</h1>
+        <p>Wednesday, 2 July 2026</p>
+      </div>
+      <div class="topbar__actions">
+        <label class="search" aria-label="Search dashboard">
+          <span class="search__icon" aria-hidden="true">⌕</span>
+          <input type="search" placeholder="Search…">
+        </label>
+        <button class="btn" type="button">Export</button>
+        <button class="btn btn--primary" type="button">New report</button>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main" id="main">
+      <!-- Stat cards -->
+      <section class="stats" aria-label="Key metrics">
+        <article class="stat">
+          <p class="stat__label">Revenue</p>
+          <p class="stat__value">$48,290</p>
+          <p class="stat__delta stat__delta--up">▲ 12.4% <span>vs last month</span></p>
+        </article>
+        <article class="stat">
+          <p class="stat__label">Active users</p>
+          <p class="stat__value">9,142</p>
+          <p class="stat__delta stat__delta--up">▲ 4.1% <span>vs last month</span></p>
+        </article>
+        <article class="stat">
+          <p class="stat__label">Orders</p>
+          <p class="stat__value">1,284</p>
+          <p class="stat__delta stat__delta--down">▼ 1.8% <span>vs last month</span></p>
+        </article>
+        <article class="stat">
+          <p class="stat__label">Churn</p>
+          <p class="stat__value">2.3%</p>
+          <p class="stat__delta stat__delta--up">▲ 0.4% <span>vs last month</span></p>
+        </article>
+      </section>
+
+      <!-- Chart panel -->
+      <section class="panel panel--chart" aria-label="Revenue by month">
+        <header class="panel__head">
+          <h2>Revenue by month</h2>
+          <span class="panel__meta">Last 8 months</span>
+        </header>
+        <div class="chart" role="img" aria-label="Bar chart of monthly revenue trending upward">
+          <div class="bar" style="--h: 42%"><span class="bar__label">Nov</span></div>
+          <div class="bar" style="--h: 56%"><span class="bar__label">Dec</span></div>
+          <div class="bar" style="--h: 48%"><span class="bar__label">Jan</span></div>
+          <div class="bar" style="--h: 68%"><span class="bar__label">Feb</span></div>
+          <div class="bar" style="--h: 61%"><span class="bar__label">Mar</span></div>
+          <div class="bar" style="--h: 80%"><span class="bar__label">Apr</span></div>
+          <div class="bar" style="--h: 74%"><span class="bar__label">May</span></div>
+          <div class="bar bar--peak" style="--h: 94%"><span class="bar__label">Jun</span></div>
+        </div>
+      </section>
+
+      <!-- Activity list -->
+      <section class="panel panel--list" aria-label="Recent activity">
+        <header class="panel__head">
+          <h2>Recent activity</h2>
+          <a class="panel__link" href="#main">View all</a>
+        </header>
+        <ul class="feed">
+          <li class="feed__item">
+            <span class="dot dot--green" aria-hidden="true"></span>
+            <div><p class="feed__title">New subscription</p><p class="feed__meta">Northwind Co. · 3m ago</p></div>
+            <span class="feed__amt">+$390</span>
+          </li>
+          <li class="feed__item">
+            <span class="dot dot--blue" aria-hidden="true"></span>
+            <div><p class="feed__title">Invoice paid</p><p class="feed__meta">Acme Ltd. · 21m ago</p></div>
+            <span class="feed__amt">+$1,200</span>
+          </li>
+          <li class="feed__item">
+            <span class="dot dot--amber" aria-hidden="true"></span>
+            <div><p class="feed__title">Refund issued</p><p class="feed__meta">J. Okafor · 1h ago</p></div>
+            <span class="feed__amt feed__amt--neg">−$58</span>
+          </li>
+          <li class="feed__item">
+            <span class="dot dot--green" aria-hidden="true"></span>
+            <div><p class="feed__title">New subscription</p><p class="feed__meta">Umbrella Inc. · 2h ago</p></div>
+            <span class="feed__amt">+$390</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Table panel -->
+      <section class="panel panel--table" aria-label="Top products">
+        <header class="panel__head">
+          <h2>Top products</h2>
+          <span class="panel__meta">By revenue</span>
+        </header>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Category</th>
+                <th scope="col">Units</th>
+                <th scope="col">Revenue</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Aurora Keyboard</th>
+                <td>Peripherals</td>
+                <td>842</td>
+                <td>$12,630</td>
+                <td><span class="tag tag--live">In stock</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Nimbus Mouse</th>
+                <td>Peripherals</td>
+                <td>701</td>
+                <td>$9,113</td>
+                <td><span class="tag tag--live">In stock</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Vertex Monitor</th>
+                <td>Displays</td>
+                <td>318</td>
+                <td>$8,904</td>
+                <td><span class="tag tag--low">Low</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Halo Webcam</th>
+                <td>Video</td>
+                <td>276</td>
+                <td>$4,140</td>
+                <td><span class="tag tag--out">Out</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
