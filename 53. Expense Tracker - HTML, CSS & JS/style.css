@@ -1,0 +1,354 @@
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --text: #18181b;
+  --muted: #71717a;
+  --border: #e4e4e7;
+  --accent: #16a34a;
+  --income: #16a34a;
+  --income-soft: #e9f7ef;
+  --expense: #dc2626;
+  --expense-soft: #fdecec;
+  --radius: 14px;
+  --space: 1rem;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem 4rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.5;
+}
+
+.app {
+  width: 100%;
+  max-width: 32rem;
+}
+
+.app__header {
+  margin-bottom: 1.5rem;
+}
+
+.app__title {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.app__subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.balance {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+}
+
+.balance__label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.balance__amount {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.balance__amount.is-negative {
+  color: var(--expense);
+}
+
+.totals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.totals__item {
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.totals__item--in {
+  background: var(--income-soft);
+  border-color: transparent;
+}
+
+.totals__item--out {
+  background: var(--expense-soft);
+  border-color: transparent;
+}
+
+.totals__label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.totals__value {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.totals__item--in .totals__value {
+  color: var(--income);
+}
+
+.totals__item--out .totals__value {
+  color: var(--expense);
+}
+
+.tx-form {
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+}
+
+.tx-form__heading,
+.history__heading {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.field {
+  margin-bottom: 0.9rem;
+}
+
+.field__label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.field__input {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field__input:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--income-soft);
+}
+
+.field-row {
+  display: flex;
+  gap: 0.9rem;
+}
+
+.field-row .field {
+  flex: 1;
+  min-width: 0;
+}
+
+.type-toggle {
+  border: none;
+  padding: 0;
+  margin: 0 0 0.9rem;
+}
+
+.type-toggle__options {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.type-toggle__option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.type-toggle__option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.type-toggle__option:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--income-soft);
+  color: var(--income);
+}
+
+.type-toggle__option:has(input[value="expense"]:checked) {
+  border-color: var(--expense);
+  background: var(--expense-soft);
+  color: var(--expense);
+}
+
+.type-toggle__option:has(input:focus-visible) {
+  box-shadow: 0 0 0 3px var(--income-soft);
+}
+
+.tx-form__submit {
+  width: 100%;
+  padding: 0.8rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--text);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.tx-form__submit:hover {
+  opacity: 0.9;
+}
+
+.tx-form__submit:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--border);
+}
+
+.tx-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tx {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: 10px;
+}
+
+.tx--income {
+  border-left-color: var(--income);
+}
+
+.tx--expense {
+  border-left-color: var(--expense);
+}
+
+.tx__label {
+  flex: 1;
+  min-width: 0;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.tx__amount {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.tx--income .tx__amount {
+  color: var(--income);
+}
+
+.tx--expense .tx__amount {
+  color: var(--expense);
+}
+
+.tx__delete {
+  flex: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: grid;
+  place-content: center;
+  font-size: 1.05rem;
+  line-height: 1;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tx__delete:hover {
+  color: var(--expense);
+  background: var(--expense-soft);
+}
+
+.tx__delete:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--border);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem 1rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
+.empty-state__mark {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 400px) {
+  .field-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .balance__amount {
+    font-size: 2rem;
+  }
+}

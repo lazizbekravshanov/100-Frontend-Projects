@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Expense Tracker</h1>
+      <p class="app__subtitle">Track income and spending, see your balance.</p>
+    </header>
+
+    <section class="balance" aria-label="Current balance">
+      <span class="balance__label">Balance</span>
+      <strong class="balance__amount" id="balance">$0.00</strong>
+      <div class="totals">
+        <div class="totals__item totals__item--in">
+          <span class="totals__label">Income</span>
+          <span class="totals__value" id="income-total">$0.00</span>
+        </div>
+        <div class="totals__item totals__item--out">
+          <span class="totals__label">Expense</span>
+          <span class="totals__value" id="expense-total">$0.00</span>
+        </div>
+      </div>
+    </section>
+
+    <form class="tx-form" id="tx-form">
+      <h2 class="tx-form__heading">Add transaction</h2>
+
+      <div class="field">
+        <label class="field__label" for="label">Description</label>
+        <input class="field__input" id="label" type="text" placeholder="e.g. Groceries" maxlength="60" required autocomplete="off">
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label class="field__label" for="amount">Amount</label>
+          <input class="field__input" id="amount" type="number" step="0.01" min="0.01" placeholder="0.00" required>
+        </div>
+
+        <fieldset class="field type-toggle">
+          <legend class="field__label">Type</legend>
+          <div class="type-toggle__options">
+            <label class="type-toggle__option">
+              <input type="radio" name="type" value="income">
+              <span>Income</span>
+            </label>
+            <label class="type-toggle__option">
+              <input type="radio" name="type" value="expense" checked>
+              <span>Expense</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="tx-form__submit" type="submit">Add transaction</button>
+    </form>
+
+    <section class="history" aria-label="Transaction history">
+      <h2 class="history__heading">History</h2>
+      <ul class="tx-list" id="tx-list"></ul>
+      <p class="empty-state" id="empty-state">
+        <span class="empty-state__mark" aria-hidden="true">💸</span>
+        No transactions yet. Add one above to get started.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
