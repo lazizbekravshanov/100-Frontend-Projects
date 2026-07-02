@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drum Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="kit">
+    <header class="kit__header">
+      <h1 class="kit__title">Drum Kit</h1>
+      <p class="kit__sub">Tap a pad or press its key. Sounds are synthesized live with the Web Audio API.</p>
+    </header>
+
+    <section class="pads" id="pads" aria-label="Drum pads">
+      <button class="pad" type="button" data-key="a" data-sound="kick" aria-label="Kick, key A">
+        <span class="pad__key">A</span>
+        <span class="pad__name">Kick</span>
+      </button>
+      <button class="pad" type="button" data-key="s" data-sound="snare" aria-label="Snare, key S">
+        <span class="pad__key">S</span>
+        <span class="pad__name">Snare</span>
+      </button>
+      <button class="pad" type="button" data-key="d" data-sound="hihat" aria-label="Hi-hat, key D">
+        <span class="pad__key">D</span>
+        <span class="pad__name">Hi-hat</span>
+      </button>
+      <button class="pad" type="button" data-key="f" data-sound="openhat" aria-label="Open hat, key F">
+        <span class="pad__key">F</span>
+        <span class="pad__name">Open hat</span>
+      </button>
+      <button class="pad" type="button" data-key="g" data-sound="clap" aria-label="Clap, key G">
+        <span class="pad__key">G</span>
+        <span class="pad__name">Clap</span>
+      </button>
+      <button class="pad" type="button" data-key="h" data-sound="tom" aria-label="Tom, key H">
+        <span class="pad__key">H</span>
+        <span class="pad__name">Tom</span>
+      </button>
+      <button class="pad" type="button" data-key="j" data-sound="rim" aria-label="Rim, key J">
+        <span class="pad__key">J</span>
+        <span class="pad__name">Rim</span>
+      </button>
+      <button class="pad" type="button" data-key="k" data-sound="cowbell" aria-label="Cowbell, key K">
+        <span class="pad__key">K</span>
+        <span class="pad__name">Cowbell</span>
+      </button>
+      <button class="pad" type="button" data-key="l" data-sound="crash" aria-label="Crash, key L">
+        <span class="pad__key">L</span>
+        <span class="pad__name">Crash</span>
+      </button>
+    </section>
+
+    <footer class="kit__footer">
+      <p>No audio files — every hit is generated on the fly.</p>
+    </footer>
+  </main>
+</body>
+</html>
