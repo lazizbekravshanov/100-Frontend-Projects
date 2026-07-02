@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elena Vasquez — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="page">
+    <article class="cv" aria-label="Curriculum vitae of Elena Vasquez">
+      <header class="cv__header">
+        <div class="cv__identity">
+          <h1 class="cv__name">Elena Vasquez</h1>
+          <p class="cv__title">Senior Product Designer</p>
+        </div>
+        <ul class="cv__contact" aria-label="Contact details">
+          <li>
+            <span class="cv__contact-icon" aria-hidden="true">✉</span>
+            <a href="mailto:elena.vasquez@example.com">elena.vasquez@example.com</a>
+          </li>
+          <li>
+            <span class="cv__contact-icon" aria-hidden="true">☎</span>
+            <a href="tel:+14155550142">+1 (415) 555-0142</a>
+          </li>
+          <li>
+            <span class="cv__contact-icon" aria-hidden="true">⌖</span>
+            <span>San Francisco, CA</span>
+          </li>
+          <li>
+            <span class="cv__contact-icon" aria-hidden="true">◈</span>
+            <a href="https://example.com/elenavasquez">elenavasquez.design</a>
+          </li>
+        </ul>
+      </header>
+
+      <div class="cv__body">
+        <div class="cv__main">
+          <section class="cv__section" aria-labelledby="summary-heading">
+            <h2 id="summary-heading" class="cv__section-title">Summary</h2>
+            <p class="cv__summary">
+              Product designer with 9+ years shaping data-heavy tools for fintech and
+              healthcare teams. I turn ambiguous problems into calm, usable interfaces,
+              lead design systems from zero to adoption, and partner closely with
+              engineering to ship work that survives real users.
+            </p>
+          </section>
+
+          <section class="cv__section" aria-labelledby="experience-heading">
+            <h2 id="experience-heading" class="cv__section-title">Experience</h2>
+
+            <div class="entry">
+              <div class="entry__head">
+                <h3 class="entry__role">Senior Product Designer</h3>
+                <span class="entry__date">2021 — Present</span>
+              </div>
+              <p class="entry__org">Northwind Financial · San Francisco</p>
+              <ul class="entry__points">
+                <li>Led the redesign of the portfolio dashboard, cutting task time to first insight by 38%.</li>
+                <li>Built and maintained the "Atlas" design system now used by 40+ engineers across 6 squads.</li>
+                <li>Mentored three junior designers and ran a weekly critique practice adopted org-wide.</li>
+              </ul>
+            </div>
+
+            <div class="entry">
+              <div class="entry__head">
+                <h3 class="entry__role">Product Designer</h3>
+                <span class="entry__date">2018 — 2021</span>
+              </div>
+              <p class="entry__org">Cedar Health · Remote</p>
+              <ul class="entry__points">
+                <li>Designed a patient intake flow that lifted completion from 61% to 89%.</li>
+                <li>Ran 40+ moderated usability sessions and translated findings into a shared research library.</li>
+              </ul>
+            </div>
+
+            <div class="entry">
+              <div class="entry__head">
+                <h3 class="entry__role">UX Designer</h3>
+                <span class="entry__date">2016 — 2018</span>
+              </div>
+              <p class="entry__org">Brightloom Studio · Austin</p>
+              <ul class="entry__points">
+                <li>Shipped web and mobile work for early-stage clients across retail and logistics.</li>
+                <li>Owned end-to-end delivery from discovery workshops to production handoff.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="cv__section" aria-labelledby="projects-heading">
+            <h2 id="projects-heading" class="cv__section-title">Selected Projects</h2>
+            <div class="entry">
+              <div class="entry__head">
+                <h3 class="entry__role">Atlas Design System</h3>
+                <span class="entry__date">2022</span>
+              </div>
+              <p class="entry__points entry__points--flat">
+                A themeable component library and token pipeline that unified five legacy
+                products into one accessible visual language.
+              </p>
+            </div>
+            <div class="entry">
+              <div class="entry__head">
+                <h3 class="entry__role">Ledger Mobile</h3>
+                <span class="entry__date">2020</span>
+              </div>
+              <p class="entry__points entry__points--flat">
+                An offline-first budgeting app concept, from field research through a
+                shippable prototype recognized at an internal design award.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <aside class="cv__side" aria-label="Skills, education and details">
+          <section class="cv__section">
+            <h2 class="cv__section-title">Skills</h2>
+            <ul class="tags" aria-label="Skills">
+              <li class="tag">Design Systems</li>
+              <li class="tag">User Research</li>
+              <li class="tag">Prototyping</li>
+              <li class="tag">Figma</li>
+              <li class="tag">Accessibility</li>
+              <li class="tag">Interaction Design</li>
+              <li class="tag">Design Ops</li>
+              <li class="tag">HTML &amp; CSS</li>
+              <li class="tag">Data Viz</li>
+            </ul>
+          </section>
+
+          <section class="cv__section">
+            <h2 class="cv__section-title">Education</h2>
+            <div class="entry entry--compact">
+              <h3 class="entry__role">B.F.A. Interaction Design</h3>
+              <p class="entry__org">California College of the Arts</p>
+              <span class="entry__date entry__date--block">2012 — 2016</span>
+            </div>
+            <div class="entry entry--compact">
+              <h3 class="entry__role">Certificate, Front-End Dev</h3>
+              <p class="entry__org">General Assembly</p>
+              <span class="entry__date entry__date--block">2017</span>
+            </div>
+          </section>
+
+          <section class="cv__section">
+            <h2 class="cv__section-title">Languages</h2>
+            <ul class="meta-list">
+              <li><span>English</span><span class="meta-list__val">Native</span></li>
+              <li><span>Spanish</span><span class="meta-list__val">Fluent</span></li>
+              <li><span>Portuguese</span><span class="meta-list__val">Conversational</span></li>
+            </ul>
+          </section>
+
+          <section class="cv__section">
+            <h2 class="cv__section-title">Recognition</h2>
+            <ul class="meta-list meta-list--stack">
+              <li>Design Lead of the Year, Northwind 2023</li>
+              <li>Speaker, Config Local SF 2022</li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
