@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Dialog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page__head">
+      <h1 class="page__title">Modal Dialog</h1>
+      <p class="page__subtitle">An accessible dialog with focus trapping and scroll lock.</p>
+    </header>
+
+    <button type="button" class="btn btn--primary" id="openBtn">Invite a teammate</button>
+  </main>
+
+  <div class="overlay" id="overlay" hidden>
+    <div
+      class="modal"
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      aria-describedby="modalDesc">
+      <button type="button" class="modal__close" id="closeBtn" aria-label="Close dialog">&times;</button>
+      <h2 class="modal__title" id="modalTitle">Invite a teammate</h2>
+      <p class="modal__desc" id="modalDesc">
+        Send an invitation to collaborate. They’ll receive an email with a link to join your workspace.
+      </p>
+
+      <form class="modal__form" id="inviteForm">
+        <label class="modal__label" for="email">Email address</label>
+        <input type="email" id="email" class="modal__input" placeholder="name@company.com" required>
+
+        <label class="modal__label" for="role">Role</label>
+        <select id="role" class="modal__input">
+          <option value="editor">Editor</option>
+          <option value="viewer">Viewer</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <div class="modal__actions">
+          <button type="button" class="btn" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn btn--primary">Send invite</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
