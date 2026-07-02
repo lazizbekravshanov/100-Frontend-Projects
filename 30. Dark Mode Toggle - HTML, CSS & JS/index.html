@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode Toggle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header__brand" href="#">Aurora</a>
+    <button class="theme-toggle" id="theme-toggle" role="switch" aria-checked="false"
+      aria-label="Toggle dark mode">
+      <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀</span>
+      <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">☾</span>
+      <span class="theme-toggle__thumb"></span>
+    </button>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <p class="hero__eyebrow">Design System Demo</p>
+      <h1 class="hero__title">A theme that follows you.</h1>
+      <p class="hero__lead">
+        Toggle between light and dark. Your choice is saved and restored on your next
+        visit, and we honour your system preference the first time around.
+      </p>
+      <div class="hero__actions">
+        <button class="btn btn--primary">Get started</button>
+        <button class="btn btn--ghost">Learn more</button>
+      </div>
+    </section>
+
+    <section class="cards" aria-label="Feature highlights">
+      <article class="card">
+        <span class="card__badge">01</span>
+        <h2 class="card__title">Persistent choice</h2>
+        <p class="card__body">Your preferred theme is stored in localStorage and reapplied instantly on load.</p>
+      </article>
+      <article class="card">
+        <span class="card__badge">02</span>
+        <h2 class="card__title">System aware</h2>
+        <p class="card__body">On first visit we respect your operating system's light or dark setting.</p>
+      </article>
+      <article class="card">
+        <span class="card__badge">03</span>
+        <h2 class="card__title">Smooth transitions</h2>
+        <p class="card__body">Colours ease between themes using CSS custom properties, no flash or jank.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built with vanilla HTML, CSS &amp; JavaScript.</p>
+  </footer>
+</body>
+</html>
