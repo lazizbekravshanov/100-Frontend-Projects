@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page__head">
+      <p class="eyebrow">Component</p>
+      <h1 class="page__title">Image Slider</h1>
+      <p class="page__lead">
+        A looping carousel with previous / next controls, dot indicators, arrow-key support,
+        and autoplay that pauses whenever you hover or focus inside it.
+      </p>
+    </header>
+
+    <section
+      class="slider"
+      id="slider"
+      aria-roledescription="carousel"
+      aria-label="Featured gradients"
+    >
+      <div class="slider__viewport">
+        <ul class="slider__track" id="track"></ul>
+      </div>
+
+      <button class="slider__arrow slider__arrow--prev" id="prev" type="button" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="slider__arrow slider__arrow--next" id="next" type="button" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="slider__dots" id="dots" role="tablist" aria-label="Choose slide"></div>
+    </section>
+  </main>
+</body>
+</html>
