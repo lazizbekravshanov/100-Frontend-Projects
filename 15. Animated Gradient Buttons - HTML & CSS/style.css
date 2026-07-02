@@ -1,0 +1,290 @@
+:root {
+  --bg: #0e0e11;
+  --surface: #17171c;
+  --text: #f4f4f5;
+  --muted: #a1a1aa;
+  --border: #26262c;
+  --g1: #6366f1;
+  --g2: #8b5cf6;
+  --g3: #ec4899;
+  --radius: 12px;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  min-height: 100vh;
+}
+
+.page-header {
+  max-width: 62ch;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--g2);
+  margin-bottom: 0.75rem;
+}
+
+.page-header h1 {
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.lede {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.grid {
+  list-style: none;
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.75rem;
+}
+
+.cell {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2.25rem 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 150px;
+  justify-content: center;
+}
+
+.name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.85rem 1.75rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn:focus-visible {
+  outline: 2px solid var(--g2);
+  outline-offset: 3px;
+}
+
+/* 1. Gradient Flow */
+.btn-flow {
+  background: linear-gradient(120deg, var(--g1), var(--g2), var(--g3), var(--g2), var(--g1));
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+  transition: background-position 0.6s ease, transform 0.2s ease;
+}
+.btn-flow:hover,
+.btn-flow:focus-visible {
+  background-position: 100% 50%;
+}
+
+/* 2. Shine Sweep */
+.btn-shine {
+  background: linear-gradient(120deg, var(--g1), var(--g2));
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+}
+.btn-shine:hover::after,
+.btn-shine:focus-visible::after {
+  left: 130%;
+}
+
+/* 3. Border Glow */
+.btn-glow {
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--border);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-glow:hover,
+.btn-glow:focus-visible {
+  box-shadow: 0 0 0 1px transparent,
+              0 0 18px 1px color-mix(in srgb, var(--g2) 65%, transparent),
+              0 0 4px 0 var(--g3);
+}
+
+/* 4. Gradient Border */
+.btn-border {
+  background: var(--surface);
+  color: var(--text);
+  border: 2px solid transparent;
+  background-image: linear-gradient(var(--surface), var(--surface)),
+    linear-gradient(120deg, var(--g1), var(--g3));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.btn-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(120deg, var(--g1), var(--g2), var(--g3));
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.btn-border:hover,
+.btn-border:focus-visible { color: #fff; }
+.btn-border:hover::before,
+.btn-border:focus-visible::before { opacity: 1; }
+
+/* 5. Slide Fill */
+.btn-fill {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-fill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, var(--g2), var(--g3));
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.btn-fill:hover,
+.btn-fill:focus-visible {
+  color: #fff;
+  border-color: transparent;
+}
+.btn-fill:hover::before,
+.btn-fill:focus-visible::before {
+  transform: translateX(0);
+}
+
+/* 6. Conic Spin */
+.btn-conic {
+  background: var(--surface);
+  padding: 0.85rem 1.75rem;
+}
+.btn-conic::before {
+  content: "";
+  position: absolute;
+  inset: -150%;
+  z-index: -2;
+  background: conic-gradient(from 0deg, var(--g1), var(--g2), var(--g3), var(--g1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: rotate 4s linear infinite;
+  animation-play-state: paused;
+}
+.btn-conic::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  z-index: -1;
+  border-radius: calc(var(--radius) - 2px);
+  background: var(--surface);
+}
+.btn-conic:hover::before,
+.btn-conic:focus-visible::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+/* 7. Gradient Text */
+.btn-text {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+.btn-text span,
+.btn-text {
+  background-clip: border-box;
+}
+.btn-text:hover,
+.btn-text:focus-visible {
+  border-color: color-mix(in srgb, var(--g2) 55%, var(--border));
+  background-image: linear-gradient(120deg, var(--g1), var(--g3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* 8. Soft Pulse */
+.btn-pulse {
+  background: linear-gradient(120deg, var(--g1), var(--g2));
+}
+.btn-pulse:hover,
+.btn-pulse:focus-visible {
+  animation: pulseGlow 1.4s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--g2) 55%, transparent); }
+  50% { box-shadow: 0 0 0 10px transparent; }
+}
+
+.page-footer {
+  margin-top: 3.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .btn::before, .btn::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body { padding: 1.5rem 1rem; }
+  .grid { grid-template-columns: 1fr; }
+}
