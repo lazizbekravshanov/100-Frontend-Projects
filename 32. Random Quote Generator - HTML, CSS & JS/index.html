@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="quote">
+    <header class="quote__head">
+      <h1 class="quote__title">Quote of the Moment</h1>
+      <p class="quote__subtitle">A little wisdom, refreshed on demand.</p>
+    </header>
+
+    <figure class="quote__card" id="quoteCard">
+      <span class="quote__mark" aria-hidden="true">&ldquo;</span>
+      <blockquote class="quote__text" id="quoteText">
+        The only way to do great work is to love what you do.
+      </blockquote>
+      <figcaption class="quote__author" id="quoteAuthor">Steve Jobs</figcaption>
+    </figure>
+
+    <div class="quote__actions">
+      <button type="button" class="btn btn--primary" id="newQuoteBtn">
+        <span aria-hidden="true">↻</span> New quote
+      </button>
+      <button type="button" class="btn" id="copyBtn">
+        <span aria-hidden="true">⧉</span> Copy
+      </button>
+      <a class="btn" id="tweetBtn" href="#" target="_blank" rel="noopener">
+        <span aria-hidden="true">✦</span> Tweet
+      </a>
+    </div>
+
+    <p class="quote__feedback" id="feedback" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>
