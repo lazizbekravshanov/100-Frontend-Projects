@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice Roller</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Dice Roller</h1>
+      <p class="app__subtitle">Roll the dice, or press <kbd>Space</kbd> / <kbd>R</kbd>.</p>
+    </header>
+
+    <section class="controls" aria-label="Dice options">
+      <div class="controls__group" role="radiogroup" aria-label="Number of dice">
+        <button class="chip is-active" type="button" data-count="1" role="radio" aria-checked="true">1 die</button>
+        <button class="chip" type="button" data-count="2" role="radio" aria-checked="false">2 dice</button>
+      </div>
+    </section>
+
+    <section class="dice" id="dice" aria-live="polite" aria-label="Dice result">
+      <!-- dice injected by JS -->
+    </section>
+
+    <p class="result" id="result" aria-live="polite">Ready to roll.</p>
+
+    <div class="actions">
+      <button class="btn btn--primary" id="rollBtn" type="button">Roll</button>
+      <button class="btn" id="resetBtn" type="button">Reset history</button>
+    </div>
+
+    <section class="stats" aria-label="Roll statistics">
+      <div class="stat">
+        <span class="stat__label">Rolls</span>
+        <span class="stat__value" id="rollCount">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat__label">Total pips</span>
+        <span class="stat__value" id="totalPips">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat__label">Best roll</span>
+        <span class="stat__value" id="bestRoll">—</span>
+      </div>
+    </section>
+
+    <section class="history" aria-label="Roll history">
+      <h2 class="history__title">History</h2>
+      <ul class="history__list" id="historyList">
+        <li class="history__empty" id="historyEmpty">No rolls yet.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
