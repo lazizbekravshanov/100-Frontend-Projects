@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawing Canvas</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="app__header">
+      <h1 class="app__title">Drawing Canvas</h1>
+      <p class="app__subtitle">Sketch freely, pick a color, adjust the brush, and save your work.</p>
+    </header>
+
+    <main class="app__main">
+      <section class="toolbar" aria-label="Drawing tools">
+        <div class="toolbar__group">
+          <label class="field" for="color">
+            <span class="field__label">Color</span>
+            <input class="field__color" type="color" id="color" value="#2563eb" aria-label="Brush color">
+          </label>
+
+          <label class="field" for="size">
+            <span class="field__label">Brush <span id="sizeValue">6</span>px</span>
+            <input class="field__range" type="range" id="size" min="1" max="60" value="6" aria-label="Brush size">
+          </label>
+        </div>
+
+        <div class="toolbar__group toolbar__group--actions">
+          <button class="btn" id="brush" type="button" aria-pressed="true">Brush</button>
+          <button class="btn" id="eraser" type="button" aria-pressed="false">Eraser</button>
+          <button class="btn" id="undo" type="button">Undo</button>
+          <button class="btn" id="clear" type="button">Clear</button>
+          <button class="btn btn--accent" id="download" type="button">Download</button>
+        </div>
+      </section>
+
+      <section class="canvas-wrap">
+        <canvas id="canvas" class="canvas" width="900" height="560" aria-label="Drawing area" role="img"></canvas>
+      </section>
+    </main>
+
+    <footer class="app__footer">
+      <p>Tip: works with mouse and touch. Undo steps back through recent strokes.</p>
+    </footer>
+  </div>
+</body>
+</html>
