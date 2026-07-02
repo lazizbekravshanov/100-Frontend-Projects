@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="tip">
+    <header class="tip__header">
+      <h1 class="tip__title">Tip Calculator</h1>
+      <p class="tip__subtitle">Split the bill, fairly.</p>
+    </header>
+
+    <form class="tip__form" id="tip-form" novalidate>
+      <div class="field">
+        <label for="bill">Bill amount</label>
+        <div class="field__input">
+          <span class="field__prefix">$</span>
+          <input type="number" id="bill" placeholder="0.00" min="0" step="0.01" inputmode="decimal">
+        </div>
+        <p class="field__error" id="bill-error"></p>
+      </div>
+
+      <fieldset class="field">
+        <legend>Tip percentage</legend>
+        <div class="tip__presets" id="presets">
+          <button type="button" class="preset" data-tip="10">10%</button>
+          <button type="button" class="preset" data-tip="15">15%</button>
+          <button type="button" class="preset is-active" data-tip="18">18%</button>
+          <button type="button" class="preset" data-tip="20">20%</button>
+          <button type="button" class="preset" data-tip="25">25%</button>
+          <div class="field__input preset preset--custom">
+            <input type="number" id="custom-tip" placeholder="Custom" min="0" step="1" inputmode="numeric" aria-label="Custom tip percentage">
+            <span class="field__suffix">%</span>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="people">Number of people</label>
+        <div class="field__input">
+          <input type="number" id="people" value="1" min="1" step="1" inputmode="numeric">
+        </div>
+        <p class="field__error" id="people-error"></p>
+      </div>
+    </form>
+
+    <section class="tip__results" aria-live="polite">
+      <div class="result">
+        <span class="result__label">Tip amount</span>
+        <span class="result__value" id="tip-amount">$0.00</span>
+      </div>
+      <div class="result">
+        <span class="result__label">Total</span>
+        <span class="result__value" id="total">$0.00</span>
+      </div>
+      <div class="result result--primary">
+        <span class="result__label">Per person</span>
+        <span class="result__value" id="per-person">$0.00</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
