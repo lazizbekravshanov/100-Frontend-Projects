@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loop — Focus Timer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#">
+        <span class="brand__mark" aria-hidden="true"></span>
+        Loop
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#specs">Why Loop</a>
+        <a class="nav__cta" href="#">Get the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__inner">
+        <p class="pill">New · Version 2.0</p>
+        <h1 class="hero__title">Deep work, one loop at a time.</h1>
+        <p class="hero__sub">
+          Loop is a calm focus timer that guards your attention. Set an intention,
+          start a session, and let gentle rhythms keep you in flow — without the noise.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="#">Start focusing free</a>
+          <a class="btn btn--ghost" href="#features">See how it works</a>
+        </div>
+        <p class="hero__note">No account needed · Works offline · macOS, iOS &amp; Android</p>
+      </div>
+
+      <div class="hero__art" aria-hidden="true">
+        <div class="device">
+          <div class="device__ring">
+            <svg viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="86" fill="none" stroke="var(--border)" stroke-width="10"/>
+              <circle cx="100" cy="100" r="86" fill="none" stroke="var(--accent)" stroke-width="10"
+                stroke-linecap="round" stroke-dasharray="540" stroke-dashoffset="150"
+                transform="rotate(-90 100 100)"/>
+            </svg>
+            <div class="device__time">
+              <span class="device__num">18:24</span>
+              <span class="device__label">Writing sprint</span>
+            </div>
+          </div>
+          <div class="device__controls">
+            <span class="dot"></span>
+            <span class="dot dot--wide"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="section__head">
+        <h2>Everything you need to stay in flow</h2>
+        <p>Thoughtful defaults, zero clutter. Loop gets out of your way.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature">
+          <div class="feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Adaptive intervals</h3>
+          <p>Loop learns your rhythm and suggests session lengths that match your energy.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M2 13h3M19 13h3M12 3v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 13l4-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Ambient soundscapes</h3>
+          <p>Rain, café, or deep hum — layered audio that masks distraction without demanding focus.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 19v-6M12 19v-9M16 19v-4M20 19v-11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Honest insights</h3>
+          <p>See where your focused hours actually go — weekly, calm, and free of vanity metrics.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.5 7.1 18.2l.9-5.5-4-3.9L9.5 8 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Streaks that respect you</h3>
+          <p>Miss a day? Loop keeps your momentum instead of shaming you into quitting.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="specs" id="specs">
+      <div class="section__head">
+        <h2>Built for the long run</h2>
+      </div>
+      <dl class="specs__grid">
+        <div class="spec">
+          <dt class="spec__num">1.2M+</dt>
+          <dd class="spec__label">Sessions completed weekly</dd>
+        </div>
+        <div class="spec">
+          <dt class="spec__num">4.9★</dt>
+          <dd class="spec__label">Average App Store rating</dd>
+        </div>
+        <div class="spec">
+          <dt class="spec__num">0 ads</dt>
+          <dd class="spec__label">No tracking, ever</dd>
+        </div>
+        <div class="spec">
+          <dt class="spec__num">&lt;8 MB</dt>
+          <dd class="spec__label">Lightweight, offline-first</dd>
+        </div>
+      </dl>
+      <div class="specs__cta">
+        <a class="btn btn--solid" href="#">Download Loop</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <a class="brand" href="#">
+        <span class="brand__mark" aria-hidden="true"></span>
+        Loop
+      </a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Support</a>
+        <a href="#">Changelog</a>
+      </nav>
+      <p class="footer__copy">© 2026 Loop Labs. Made for people who make things.</p>
+    </div>
+  </footer>
+</body>
+</html>
