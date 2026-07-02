@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Todo</h1>
+      <p class="app__subtitle">Keep track of what matters today.</p>
+    </header>
+
+    <form class="composer" id="todo-form">
+      <label class="sr-only" for="todo-input">New task</label>
+      <input
+        class="composer__input"
+        id="todo-input"
+        type="text"
+        placeholder="Add a task and press Enter"
+        autocomplete="off"
+        maxlength="120"
+      >
+      <button class="composer__submit" type="submit" aria-label="Add task">Add</button>
+    </form>
+
+    <nav class="filters" aria-label="Filter tasks">
+      <button class="filters__btn is-active" type="button" data-filter="all">All</button>
+      <button class="filters__btn" type="button" data-filter="active">Active</button>
+      <button class="filters__btn" type="button" data-filter="done">Done</button>
+    </nav>
+
+    <ul class="todo-list" id="todo-list" aria-live="polite"></ul>
+
+    <p class="empty-state" id="empty-state" hidden>
+      <span class="empty-state__mark" aria-hidden="true">✳</span>
+      Nothing here yet. Add your first task above.
+    </p>
+
+    <footer class="app__footer" id="app-footer" hidden>
+      <span class="count" id="count">0 items left</span>
+      <button class="link-btn" type="button" id="clear-completed">Clear completed</button>
+    </footer>
+  </main>
+</body>
+</html>
