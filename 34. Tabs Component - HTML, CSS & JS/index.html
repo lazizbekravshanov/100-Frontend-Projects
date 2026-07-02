@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs Component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page__head">
+      <h1 class="page__title">Product Overview</h1>
+      <p class="page__subtitle">Browse the details across each section.</p>
+    </header>
+
+    <div class="tabs">
+      <div class="tabs__list" role="tablist" aria-label="Product information">
+        <button class="tabs__tab" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true" tabindex="0">Overview</button>
+        <button class="tabs__tab" role="tab" id="tab-features" aria-controls="panel-features" aria-selected="false" tabindex="-1">Features</button>
+        <button class="tabs__tab" role="tab" id="tab-pricing" aria-controls="panel-pricing" aria-selected="false" tabindex="-1">Pricing</button>
+        <button class="tabs__tab" role="tab" id="tab-support" aria-controls="panel-support" aria-selected="false" tabindex="-1">Support</button>
+        <span class="tabs__indicator" aria-hidden="true"></span>
+      </div>
+
+      <div class="tabs__panels">
+        <section class="tabs__panel" role="tabpanel" id="panel-overview" aria-labelledby="tab-overview" tabindex="0">
+          <h2>A workspace built for focus</h2>
+          <p>Bring your notes, tasks, and documents into one calm, distraction-free environment. Everything syncs instantly across your devices so you can pick up right where you left off.</p>
+          <p>Designed for individuals and teams who value clarity over clutter.</p>
+        </section>
+
+        <section class="tabs__panel" role="tabpanel" id="panel-features" aria-labelledby="tab-features" tabindex="0" hidden>
+          <h2>Features that stay out of the way</h2>
+          <ul>
+            <li>Markdown editor with live preview</li>
+            <li>Nested folders and quick search</li>
+            <li>Offline-first with automatic sync</li>
+            <li>Keyboard shortcuts for every action</li>
+          </ul>
+        </section>
+
+        <section class="tabs__panel" role="tabpanel" id="panel-pricing" aria-labelledby="tab-pricing" tabindex="0" hidden>
+          <h2>Simple, honest pricing</h2>
+          <p>Start free forever with generous limits. When you’re ready, the Pro plan is a flat monthly rate with no per-seat surprises and no long-term contract.</p>
+          <p><strong>Free</strong> for personal use · <strong>Pro</strong> at a flat rate · <strong>Team</strong> with shared billing.</p>
+        </section>
+
+        <section class="tabs__panel" role="tabpanel" id="panel-support" aria-labelledby="tab-support" tabindex="0" hidden>
+          <h2>Help when you need it</h2>
+          <p>Our support team replies within one business day, and most questions are answered in minutes by the searchable help center. Priority support is included on every paid plan.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
