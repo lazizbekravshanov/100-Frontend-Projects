@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copy to Clipboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page__head">
+      <p class="page__kicker">Utility</p>
+      <h1 class="page__title">Copy to Clipboard</h1>
+      <p class="page__sub">One tap to copy. Uses the async Clipboard API with a graceful fallback.</p>
+    </header>
+
+    <section class="stack" aria-label="Copyable items">
+      <div class="snippet">
+        <div class="snippet__head">
+          <span class="snippet__lang">Install</span>
+        </div>
+        <div class="snippet__body">
+          <code class="snippet__code" data-copy-target>npm install clipboard-toast</code>
+          <button class="copy" type="button" data-copy aria-label="Copy install command">
+            <span class="copy__icon" data-icon></span>
+            <span class="copy__text">Copy</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="snippet">
+        <div class="snippet__head">
+          <span class="snippet__lang">API key</span>
+        </div>
+        <div class="snippet__body">
+          <code class="snippet__code snippet__code--mask" data-copy-target>sk_live_9f2b7c1a4e8d63f0aa17</code>
+          <button class="copy" type="button" data-copy aria-label="Copy API key">
+            <span class="copy__icon" data-icon></span>
+            <span class="copy__text">Copy</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="share">Share link</label>
+        <div class="field__wrap">
+          <input class="field__input" id="share" type="text" readonly
+                 value="https://claude.example/s/9Fx2Kd7Qm" data-copy-target>
+          <button class="copy copy--inline" type="button" data-copy aria-label="Copy share link">
+            <span class="copy__icon" data-icon></span>
+            <span class="copy__text">Copy</span>
+          </button>
+        </div>
+      </div>
+
+      <figure class="quote">
+        <blockquote class="quote__text" data-copy-target>
+          Simplicity is the ultimate sophistication.
+        </blockquote>
+        <figcaption class="quote__foot">
+          <cite>&mdash; attributed to Leonardo da Vinci</cite>
+          <button class="copy copy--ghost" type="button" data-copy aria-label="Copy quote">
+            <span class="copy__icon" data-icon></span>
+            <span class="copy__text">Copy quote</span>
+          </button>
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <footer class="site-footer">
+    <p>Clipboard API with an execCommand fallback for older browsers.</p>
+  </footer>
+</body>
+</html>
