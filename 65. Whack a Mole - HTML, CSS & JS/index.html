@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whack a Mole</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="app__header">
+      <h1 class="app__title">Whack a Mole</h1>
+      <p class="app__subtitle">Tap the moles as they pop up. They get faster — stay sharp.</p>
+    </header>
+
+    <main class="app__main">
+      <section class="hud" aria-label="Game status">
+        <div class="hud__stat">
+          <span class="hud__value" id="score">0</span>
+          <span class="hud__label">Score</span>
+        </div>
+        <div class="hud__stat">
+          <span class="hud__value" id="time">30</span>
+          <span class="hud__label">Time</span>
+        </div>
+        <div class="hud__stat">
+          <span class="hud__value" id="highScore">0</span>
+          <span class="hud__label">Best</span>
+        </div>
+        <button class="btn btn--accent" id="start" type="button">Start Game</button>
+      </section>
+
+      <section class="grid" id="grid" aria-label="Mole grid"></section>
+
+      <p class="message" id="message" role="status" aria-live="polite">Press Start to play.</p>
+    </main>
+
+    <footer class="app__footer">
+      <p>Your best score is saved on this device.</p>
+    </footer>
+  </div>
+</body>
+</html>
