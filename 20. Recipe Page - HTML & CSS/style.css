@@ -1,0 +1,236 @@
+:root {
+  --bg: #faf9f6;
+  --surface: #ffffff;
+  --surface-2: #f4f2ec;
+  --text: #1c1917;
+  --muted: #78716c;
+  --border: #e7e3da;
+  --accent: #b45309;
+  --accent-soft: #f6e9d6;
+  --radius: 16px;
+  --space: 1rem;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+.recipe {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(28, 25, 23, 0.05);
+}
+
+/* Header */
+.recipe__header {
+  padding: clamp(1.75rem, 5vw, 3rem);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.recipe__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+.recipe__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.1rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0.6rem 0 0.9rem;
+}
+
+.recipe__intro {
+  max-width: 46ch;
+  color: #44403c;
+  font-size: 1.02rem;
+}
+
+/* Chips */
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.6rem;
+}
+
+.chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  min-width: 5.2rem;
+}
+
+.chip__label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.chip__value {
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+/* Body */
+.recipe__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+@media (min-width: 760px) {
+  .recipe__body {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+  .instructions {
+    border-left: 1px solid var(--border);
+  }
+}
+
+.ingredients,
+.instructions {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.ingredients {
+  border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 760px) {
+  .ingredients {
+    border-bottom: none;
+    background: #fdfcf9;
+  }
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.section-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0.15rem 0 1.2rem;
+}
+
+/* Ingredients */
+.ingredients__list {
+  list-style: none;
+  display: grid;
+  gap: 0.05rem;
+}
+
+.ingredients__list li {
+  position: relative;
+  padding: 0.55rem 0 0.55rem 1.7rem;
+  font-size: 0.95rem;
+  color: #44403c;
+  border-bottom: 1px dashed var(--border);
+}
+
+.ingredients__list li:last-child {
+  border-bottom: none;
+}
+
+.ingredients__list li::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 1.05em;
+  width: 7px;
+  height: 7px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+}
+
+/* Instructions */
+.instructions__list {
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.instructions__list li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 3rem;
+}
+
+.instructions__list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.step__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.instructions__list p {
+  font-size: 0.95rem;
+  color: #44403c;
+}
+
+/* Footer */
+.recipe__footer {
+  padding: clamp(1.25rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--border);
+  background: var(--accent-soft);
+}
+
+.tip {
+  font-size: 0.92rem;
+  color: #6b4415;
+}
+
+.tip strong {
+  color: var(--accent);
+}
