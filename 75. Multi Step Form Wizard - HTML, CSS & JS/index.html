@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi Step Form Wizard</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main class="wizard">
+      <header class="wizard__header">
+        <p class="wizard__eyebrow">Get started</p>
+        <h1 class="wizard__title">Create your account</h1>
+        <p class="wizard__subtitle">A few quick steps and you're all set.</p>
+      </header>
+
+      <!-- Step indicator -->
+      <nav class="steps" aria-label="Progress">
+        <ol class="steps__list">
+          <li class="steps__item" data-step-indicator="1" aria-current="step">
+            <span class="steps__marker">1</span>
+            <span class="steps__label">Personal</span>
+          </li>
+          <li class="steps__item" data-step-indicator="2">
+            <span class="steps__marker">2</span>
+            <span class="steps__label">Account</span>
+          </li>
+          <li class="steps__item" data-step-indicator="3">
+            <span class="steps__marker">3</span>
+            <span class="steps__label">Preferences</span>
+          </li>
+          <li class="steps__item" data-step-indicator="4">
+            <span class="steps__marker">4</span>
+            <span class="steps__label">Review</span>
+          </li>
+        </ol>
+      </nav>
+
+      <form class="form" id="wizardForm" novalidate>
+        <!-- Step 1: Personal info -->
+        <fieldset class="step" data-step="1">
+          <legend class="step__legend">Personal information</legend>
+
+          <div class="field">
+            <label class="field__label" for="fullName">Full name</label>
+            <input
+              class="field__input"
+              type="text"
+              id="fullName"
+              name="fullName"
+              autocomplete="name"
+              placeholder="Ada Lovelace"
+              aria-describedby="fullName-error"
+            />
+            <p class="field__error" id="fullName-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="email">Email address</label>
+            <input
+              class="field__input"
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="ada@example.com"
+              aria-describedby="email-error"
+            />
+            <p class="field__error" id="email-error" role="alert"></p>
+          </div>
+        </fieldset>
+
+        <!-- Step 2: Account -->
+        <fieldset class="step" data-step="2" hidden>
+          <legend class="step__legend">Account details</legend>
+
+          <div class="field">
+            <label class="field__label" for="username">Username</label>
+            <input
+              class="field__input"
+              type="text"
+              id="username"
+              name="username"
+              autocomplete="username"
+              placeholder="ada_l"
+              aria-describedby="username-error"
+            />
+            <p class="field__error" id="username-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="password">Password</label>
+            <input
+              class="field__input"
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="new-password"
+              placeholder="At least 8 characters"
+              aria-describedby="password-hint password-error"
+            />
+            <p class="field__hint" id="password-hint">Use 8 or more characters.</p>
+            <p class="field__error" id="password-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="confirmPassword">Confirm password</label>
+            <input
+              class="field__input"
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              autocomplete="new-password"
+              placeholder="Re-enter your password"
+              aria-describedby="confirmPassword-error"
+            />
+            <p class="field__error" id="confirmPassword-error" role="alert"></p>
+          </div>
+        </fieldset>
+
+        <!-- Step 3: Preferences -->
+        <fieldset class="step" data-step="3" hidden>
+          <legend class="step__legend">Preferences</legend>
+
+          <div class="field">
+            <span class="field__label" id="plan-label">Choose a plan</span>
+            <div class="plans" role="radiogroup" aria-labelledby="plan-label" aria-describedby="plan-error">
+              <label class="plan">
+                <input class="plan__input" type="radio" name="plan" value="Starter" />
+                <span class="plan__body">
+                  <span class="plan__name">Starter</span>
+                  <span class="plan__price">Free</span>
+                  <span class="plan__desc">For individuals getting started.</span>
+                </span>
+              </label>
+              <label class="plan">
+                <input class="plan__input" type="radio" name="plan" value="Pro" />
+                <span class="plan__body">
+                  <span class="plan__name">Pro</span>
+                  <span class="plan__price">$12/mo</span>
+                  <span class="plan__desc">For growing teams and power users.</span>
+                </span>
+              </label>
+              <label class="plan">
+                <input class="plan__input" type="radio" name="plan" value="Enterprise" />
+                <span class="plan__body">
+                  <span class="plan__name">Enterprise</span>
+                  <span class="plan__price">Custom</span>
+                  <span class="plan__desc">Advanced controls and support.</span>
+                </span>
+              </label>
+            </div>
+            <p class="field__error" id="plan-error" role="alert"></p>
+          </div>
+
+          <div class="field field--check">
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" id="newsletter" name="newsletter" />
+              <span class="checkbox__box" aria-hidden="true"></span>
+              <span class="checkbox__text">Send me product news and occasional tips.</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Step 4: Review -->
+        <fieldset class="step" data-step="4" hidden>
+          <legend class="step__legend">Review your details</legend>
+          <p class="step__note">Please confirm everything looks right before submitting.</p>
+
+          <dl class="review">
+            <div class="review__row">
+              <dt class="review__key">Full name</dt>
+              <dd class="review__val" data-review="fullName">—</dd>
+            </div>
+            <div class="review__row">
+              <dt class="review__key">Email</dt>
+              <dd class="review__val" data-review="email">—</dd>
+            </div>
+            <div class="review__row">
+              <dt class="review__key">Username</dt>
+              <dd class="review__val" data-review="username">—</dd>
+            </div>
+            <div class="review__row">
+              <dt class="review__key">Password</dt>
+              <dd class="review__val" data-review="password">—</dd>
+            </div>
+            <div class="review__row">
+              <dt class="review__key">Plan</dt>
+              <dd class="review__val" data-review="plan">—</dd>
+            </div>
+            <div class="review__row">
+              <dt class="review__key">Newsletter</dt>
+              <dd class="review__val" data-review="newsletter">—</dd>
+            </div>
+          </dl>
+        </fieldset>
+
+        <!-- Success screen -->
+        <div class="success" data-success hidden>
+          <div class="success__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+          </div>
+          <h2 class="success__title">You're all set!</h2>
+          <p class="success__text">Your account has been created successfully.</p>
+          <button class="btn btn--primary" type="button" data-action="restart">Start over</button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="form__nav" data-nav>
+          <button class="btn btn--ghost" type="button" data-action="back" disabled>Back</button>
+          <button class="btn btn--primary" type="button" data-action="next">Next</button>
+          <button class="btn btn--primary" type="submit" data-action="submit" hidden>Submit</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
