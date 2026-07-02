@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dispatch — Infinite Scroll Feed</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true">◆</span>
+          <span class="brand__name">Dispatch</span>
+        </div>
+        <p class="site-header__tagline">Notes from people building things.</p>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="page__head">
+        <h1 class="page__title">Your Feed</h1>
+        <p class="page__subtitle">
+          Fresh posts load automatically as you reach the bottom.
+        </p>
+      </div>
+
+      <!-- Live region announces new content for assistive tech -->
+      <p class="sr-only" role="status" aria-live="polite" id="feed-status"></p>
+
+      <section
+        class="feed"
+        id="feed"
+        aria-label="Post feed"
+        aria-busy="false"
+      ></section>
+
+      <!-- Skeleton placeholders shown while a batch is loading -->
+      <div class="skeletons" id="skeletons" hidden aria-hidden="true"></div>
+
+      <!-- Sentinel observed by IntersectionObserver -->
+      <div class="sentinel" id="sentinel" aria-hidden="true"></div>
+
+      <p class="feed-end" id="feed-end" hidden>
+        <span class="feed-end__rule" aria-hidden="true"></span>
+        You're all caught up — that's every post.
+        <span class="feed-end__rule" aria-hidden="true"></span>
+      </p>
+    </main>
+  </body>
+</html>
