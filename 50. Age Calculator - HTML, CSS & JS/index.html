@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Age Calculator</h1>
+      <p class="app__subtitle">Your exact age and the countdown to your next birthday.</p>
+    </header>
+
+    <form class="form" id="form" novalidate>
+      <div class="field">
+        <label class="field__label" for="dob">Date of birth</label>
+        <input class="field__input" id="dob" type="date" required>
+      </div>
+      <p class="form__error" id="error" role="alert" hidden></p>
+      <button class="btn btn--primary" type="submit">Calculate age</button>
+    </form>
+
+    <section class="result" id="result" hidden aria-live="polite">
+      <div class="age">
+        <div class="age__part">
+          <span class="age__num" id="years">0</span>
+          <span class="age__unit">years</span>
+        </div>
+        <div class="age__part">
+          <span class="age__num" id="months">0</span>
+          <span class="age__unit">months</span>
+        </div>
+        <div class="age__part">
+          <span class="age__num" id="days">0</span>
+          <span class="age__unit">days</span>
+        </div>
+      </div>
+
+      <dl class="facts">
+        <div class="fact">
+          <dt class="fact__label">Total days lived</dt>
+          <dd class="fact__value" id="totalDays">0</dd>
+        </div>
+        <div class="fact">
+          <dt class="fact__label">Total months</dt>
+          <dd class="fact__value" id="totalMonths">0</dd>
+        </div>
+        <div class="fact">
+          <dt class="fact__label">Total weeks</dt>
+          <dd class="fact__value" id="totalWeeks">0</dd>
+        </div>
+      </dl>
+
+      <p class="birthday" id="birthday"></p>
+    </section>
+  </main>
+</body>
+</html>
