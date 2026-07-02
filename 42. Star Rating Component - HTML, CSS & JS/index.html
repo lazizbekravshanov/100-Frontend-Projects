@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Rating Component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page__head">
+      <p class="page__kicker">Component</p>
+      <h1 class="page__title">Star Rating</h1>
+      <p class="page__sub">Hover to preview, click to set, or use the arrow keys once focused.</p>
+    </header>
+
+    <section class="card" aria-labelledby="rate-label">
+      <h2 class="card__label" id="rate-label">Rate your experience</h2>
+
+      <div
+        class="rating"
+        data-rating
+        role="slider"
+        tabindex="0"
+        aria-label="Rate your experience from 0 to 5 stars"
+        aria-valuemin="0"
+        aria-valuemax="5"
+        aria-valuenow="0"
+        aria-valuetext="No rating"
+      >
+        <div class="rating__stars" data-stars></div>
+      </div>
+
+      <p class="rating__value" data-value aria-live="polite">Not rated yet</p>
+      <p class="rating__hint">Tip: hold <kbd>Shift</kbd> with the arrow keys for half stars.</p>
+    </section>
+
+    <section class="card" aria-labelledby="ro-label">
+      <h2 class="card__label" id="ro-label">Average rating</h2>
+      <div
+        class="rating rating--readonly"
+        data-rating
+        data-readonly
+        data-initial="4.5"
+        role="img"
+        aria-label="Average rating: 4.5 out of 5 stars"
+      >
+        <div class="rating__stars" data-stars></div>
+      </div>
+      <p class="rating__value rating__value--static">4.5 out of 5 &middot; 1,248 reviews</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Accessible, reusable, keyboard-friendly. Built with vanilla JS.</p>
+  </footer>
+</body>
+</html>
