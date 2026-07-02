@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Counter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="counter">
+    <header class="counter__head">
+      <h1 class="counter__title">Character Counter</h1>
+      <p class="counter__subtitle">Write your message and keep an eye on the length.</p>
+    </header>
+
+    <section class="counter__stats" aria-label="Live statistics">
+      <div class="stat">
+        <span class="stat__value" id="charCount">0</span>
+        <span class="stat__label">Characters</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value" id="wordCount">0</span>
+        <span class="stat__label">Words</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value" id="remainingCount">280</span>
+        <span class="stat__label">Remaining</span>
+      </div>
+    </section>
+
+    <div class="counter__field">
+      <label class="counter__label" for="message">Your message</label>
+      <textarea
+        id="message"
+        class="counter__input"
+        rows="6"
+        maxlength="280"
+        placeholder="Start typing…"
+        aria-describedby="limitHint"></textarea>
+      <div class="counter__meta">
+        <div class="progress" aria-hidden="true">
+          <div class="progress__bar" id="progressBar"></div>
+        </div>
+        <p class="counter__hint" id="limitHint" role="status" aria-live="polite">
+          <span id="usedCount">0</span> / <span id="limitLabel">280</span> characters used
+        </p>
+      </div>
+    </div>
+
+    <div class="counter__controls">
+      <label class="counter__label" for="limitInput">Max length</label>
+      <input type="number" id="limitInput" class="counter__number" min="10" max="2000" step="10" value="280">
+      <button type="button" class="counter__clear" id="clearBtn">Clear</button>
+    </div>
+  </main>
+</body>
+</html>
