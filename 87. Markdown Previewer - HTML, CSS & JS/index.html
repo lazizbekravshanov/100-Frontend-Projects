@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Previewer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-header__brand">
+      <h1>Markdown Previewer</h1>
+      <p>Write on the left, see rendered HTML on the right.</p>
+    </div>
+    <div class="app-header__actions">
+      <button type="button" id="reset-btn" class="btn btn--ghost">Reset</button>
+      <button type="button" id="clear-btn" class="btn btn--ghost">Clear</button>
+    </div>
+  </header>
+
+  <main class="editor">
+    <section class="pane" aria-label="Markdown input">
+      <div class="pane__bar">
+        <span class="pane__label">Markdown</span>
+        <span class="pane__meta" id="char-count">0 chars</span>
+      </div>
+      <label class="sr-only" for="input">Markdown source</label>
+      <textarea id="input" class="pane__area" spellcheck="false"
+        placeholder="Type some markdown..."></textarea>
+    </section>
+
+    <section class="pane" aria-label="Rendered preview">
+      <div class="pane__bar">
+        <span class="pane__label">Preview</span>
+      </div>
+      <article id="preview" class="pane__preview markdown-body" aria-live="polite"></article>
+    </section>
+  </main>
+</body>
+</html>
