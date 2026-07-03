@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Piano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <p class="eyebrow">Project 98</p>
+      <h1>Keyboard Piano</h1>
+      <p class="app__lede">
+        Play with your mouse or your computer keys. Every tone is synthesized live
+        with the Web Audio API &mdash; no audio files anywhere.
+      </p>
+    </header>
+
+    <section class="controls" aria-label="Piano controls">
+      <div class="control">
+        <span class="control__label" id="octave-label">Octave</span>
+        <div class="octave" role="group" aria-labelledby="octave-label">
+          <button class="btn-icon" type="button" data-octave-down aria-label="Lower octave">&minus;</button>
+          <output class="octave__value" data-octave-value>4</output>
+          <button class="btn-icon" type="button" data-octave-up aria-label="Raise octave">+</button>
+        </div>
+      </div>
+
+      <label class="control control--toggle">
+        <span class="control__label">Sustain</span>
+        <input type="checkbox" data-sustain>
+        <span class="switch" aria-hidden="true"></span>
+      </label>
+
+      <label class="control control--range">
+        <span class="control__label" id="vol-label">Volume</span>
+        <input type="range" min="0" max="100" value="60" data-volume aria-labelledby="vol-label">
+      </label>
+
+      <label class="control control--toggle">
+        <span class="control__label">Key labels</span>
+        <input type="checkbox" data-labels checked>
+        <span class="switch" aria-hidden="true"></span>
+      </label>
+    </section>
+
+    <section class="piano-wrap" aria-label="Piano keyboard">
+      <div class="piano" data-piano></div>
+    </section>
+
+    <p class="hint" data-hint>Click a key or tap a highlighted letter on your keyboard to begin.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>White keys: A S D F G H J K &nbsp;&middot;&nbsp; Black keys: W E T Y U</p>
+  </footer>
+</body>
+</html>
