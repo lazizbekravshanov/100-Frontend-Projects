@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base64 Encoder / Decoder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="app-header">
+    <h1>Base64 Encoder / Decoder</h1>
+    <p>Convert text to and from Base64, with full UTF-8 support.</p>
+  </header>
+
+  <main class="app">
+    <div class="mode" role="tablist" aria-label="Conversion direction">
+      <button type="button" id="mode-encode" class="mode__btn" role="tab" aria-selected="true">Text → Base64</button>
+      <button type="button" id="mode-decode" class="mode__btn" role="tab" aria-selected="false">Base64 → Text</button>
+    </div>
+
+    <div class="converter">
+      <section class="panel" aria-label="Input">
+        <div class="panel__bar">
+          <span class="panel__label" id="input-label">Text</span>
+          <span class="panel__meta" id="input-count">0 chars</span>
+        </div>
+        <label class="sr-only" for="input">Input</label>
+        <textarea id="input" class="editor" spellcheck="false"
+          placeholder="Type or paste text to encode..."></textarea>
+      </section>
+
+      <div class="swap">
+        <button type="button" id="swap-btn" class="icon-btn" aria-label="Swap input and output">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 10l-3 3 3 3"></path><path d="M4 13h16"></path>
+            <path d="M17 14l3-3-3-3"></path><path d="M20 11H4"></path>
+          </svg>
+        </button>
+      </div>
+
+      <section class="panel" aria-label="Output">
+        <div class="panel__bar">
+          <span class="panel__label" id="output-label">Base64</span>
+          <span class="panel__meta" id="output-count">0 chars</span>
+        </div>
+        <label class="sr-only" for="output">Output</label>
+        <textarea id="output" class="editor" spellcheck="false" readonly
+          placeholder="Result appears here..."></textarea>
+      </section>
+    </div>
+
+    <p id="error" class="error" role="alert" hidden></p>
+
+    <div class="actions">
+      <button type="button" id="copy-btn" class="btn btn--primary">Copy output</button>
+      <button type="button" id="clear-btn" class="btn">Clear</button>
+      <label class="file-btn btn">
+        <span>Encode a file</span>
+        <input type="file" id="file" hidden>
+      </label>
+    </div>
+    <p id="status" class="status" role="status"></p>
+  </main>
+</body>
+</html>
