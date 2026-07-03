@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regex Tester</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="app-header">
+    <h1>Regex Tester</h1>
+    <p>Build a pattern, toggle flags, and highlight matches live.</p>
+  </header>
+
+  <main class="app">
+    <section class="controls" aria-label="Pattern and flags">
+      <div class="pattern">
+        <span class="pattern__delim" aria-hidden="true">/</span>
+        <label class="sr-only" for="pattern">Regular expression pattern</label>
+        <input type="text" id="pattern" class="pattern__input" spellcheck="false"
+          autocapitalize="off" autocomplete="off" placeholder="\b\w+@\w+\.\w+\b">
+        <span class="pattern__delim" aria-hidden="true">/</span>
+        <span class="pattern__flags" id="flag-readout">g</span>
+      </div>
+
+      <fieldset class="flags">
+        <legend class="sr-only">Flags</legend>
+        <label class="flag"><input type="checkbox" id="flag-g" checked><span>g</span><small>global</small></label>
+        <label class="flag"><input type="checkbox" id="flag-i"><span>i</span><small>ignore case</small></label>
+        <label class="flag"><input type="checkbox" id="flag-m"><span>m</span><small>multiline</small></label>
+        <label class="flag"><input type="checkbox" id="flag-s"><span>s</span><small>dotall</small></label>
+        <label class="flag"><input type="checkbox" id="flag-u"><span>u</span><small>unicode</small></label>
+      </fieldset>
+
+      <div class="presets">
+        <label class="sr-only" for="preset">Common patterns</label>
+        <select id="preset">
+          <option value="">Common patterns...</option>
+        </select>
+      </div>
+    </section>
+
+    <p id="error" class="error" role="alert" hidden></p>
+
+    <div class="grid">
+      <section class="panel" aria-label="Test string">
+        <div class="panel__bar">
+          <span class="panel__label">Test string</span>
+          <span class="panel__meta" id="match-count">0 matches</span>
+        </div>
+        <div class="editor-wrap">
+          <div id="highlight" class="highlight" aria-hidden="true"></div>
+          <label class="sr-only" for="test">Test string</label>
+          <textarea id="test" class="editor" spellcheck="false"></textarea>
+        </div>
+      </section>
+
+      <section class="panel" aria-label="Matches">
+        <div class="panel__bar">
+          <span class="panel__label">Matches</span>
+        </div>
+        <div id="matches" class="matches"></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
