@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Formatter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="app-header">
+    <h1>JSON Formatter</h1>
+    <p>Prettify, minify, validate, and explore JSON.</p>
+  </header>
+
+  <main class="app">
+    <section class="panel" aria-label="JSON input">
+      <div class="panel__bar">
+        <span class="panel__label">Input</span>
+        <div class="toolbar">
+          <label class="field">
+            <span>Indent</span>
+            <select id="indent" aria-label="Indent size">
+              <option value="2">2 spaces</option>
+              <option value="4">4 spaces</option>
+              <option value="tab">Tab</option>
+            </select>
+          </label>
+          <button type="button" id="sample-btn" class="btn btn--ghost">Sample</button>
+        </div>
+      </div>
+      <label class="sr-only" for="input">JSON input</label>
+      <textarea id="input" class="editor" spellcheck="false"
+        placeholder='Paste JSON here, e.g. {"hello": "world"}'></textarea>
+      <div class="actions">
+        <button type="button" id="format-btn" class="btn btn--primary">Format</button>
+        <button type="button" id="minify-btn" class="btn">Minify</button>
+        <button type="button" id="validate-btn" class="btn">Validate</button>
+        <button type="button" id="clear-btn" class="btn btn--ghost">Clear</button>
+      </div>
+      <p id="status" class="status" role="status"></p>
+    </section>
+
+    <section class="panel" aria-label="Formatted output">
+      <div class="panel__bar">
+        <span class="panel__label">Output</span>
+        <div class="toolbar">
+          <div class="segmented" role="tablist" aria-label="Output view">
+            <button type="button" id="tab-text" class="seg" role="tab" aria-selected="true">Text</button>
+            <button type="button" id="tab-tree" class="seg" role="tab" aria-selected="false">Tree</button>
+          </div>
+          <button type="button" id="copy-btn" class="btn btn--ghost">Copy</button>
+        </div>
+      </div>
+      <pre id="output" class="output" tabindex="0"></pre>
+      <div id="tree" class="tree" hidden></div>
+    </section>
+  </main>
+</body>
+</html>
