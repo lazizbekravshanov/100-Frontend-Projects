@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech to Text Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <div>
+        <p class="eyebrow">Project 99</p>
+        <h1>Speech to Text Notes</h1>
+        <p class="app__lede">Dictate with your voice, edit by hand, and everything saves automatically.</p>
+      </div>
+      <span class="status" data-status aria-live="polite">
+        <span class="status__dot" aria-hidden="true"></span>
+        <span class="status__text" data-status-text>Idle</span>
+      </span>
+    </header>
+
+    <div class="unsupported" data-unsupported hidden role="alert">
+      <strong>Speech recognition isn&rsquo;t available in this browser.</strong>
+      <p>Try Chrome, Edge, or Safari to dictate. You can still type and edit notes below &mdash; everything still saves.</p>
+    </div>
+
+    <section class="toolbar" aria-label="Recording controls">
+      <button class="btn btn--record" type="button" data-toggle aria-pressed="false">
+        <span class="btn__mic" aria-hidden="true"></span>
+        <span data-toggle-label>Start dictation</span>
+      </button>
+      <button class="btn btn--ghost" type="button" data-clear>Clear</button>
+      <button class="btn btn--ghost" type="button" data-copy>Copy</button>
+      <span class="wordcount" data-wordcount>0 words</span>
+    </section>
+
+    <section class="editor-wrap">
+      <label class="visually-hidden" for="notes">Your notes</label>
+      <div class="editor" id="notes" data-editor contenteditable="true" role="textbox"
+        aria-multiline="true" aria-label="Notes editor"
+        data-placeholder="Press start and speak, or just type here…"></div>
+      <p class="interim" data-interim aria-live="polite"></p>
+    </section>
+
+    <p class="saved" data-saved>Saved locally in this browser.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>Notes persist via localStorage. Nothing leaves your device.</p>
+  </footer>
+</body>
+</html>
