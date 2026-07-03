@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Scrolling Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span class="progress__bar" data-progress></span></div>
+
+  <header class="topbar">
+    <a class="topbar__brand" href="#top">Vale &amp; Ridge</a>
+    <nav class="topbar__nav" aria-label="Sections">
+      <a href="#peaks">Peaks</a>
+      <a href="#valley">Valley</a>
+      <a href="#night">Night</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Scene 1: layered mountains -->
+    <section class="scene scene--hero" id="peaks">
+      <div class="layer layer--sky"></div>
+      <div class="layer layer--sun" data-parallax data-speed="0.15"></div>
+      <svg class="layer layer--far" data-parallax data-speed="0.28" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <path d="M0 400 L0 220 L220 90 L440 230 L680 70 L920 250 L1180 110 L1440 240 L1440 400 Z" fill="#c9b8e6"/>
+      </svg>
+      <svg class="layer layer--mid" data-parallax data-speed="0.5" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <path d="M0 400 L0 280 L260 150 L520 300 L780 140 L1060 300 L1300 180 L1440 300 L1440 400 Z" fill="#8f76c9"/>
+      </svg>
+      <svg class="layer layer--near" data-parallax data-speed="0.82" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <path d="M0 400 L0 340 L300 220 L620 360 L900 230 L1200 360 L1440 260 L1440 400 Z" fill="#4a3a75"/>
+      </svg>
+      <div class="hero__copy" data-parallax data-speed="0.35">
+        <p class="eyebrow">Project 97</p>
+        <h1>Between the<br>peaks and the dusk.</h1>
+        <p class="hero__lede">Scroll to travel through layered scenery that drifts at different speeds.</p>
+        <a class="scroll-cue" href="#valley">Begin the descent &#8595;</a>
+      </div>
+    </section>
+
+    <!-- Scene 2: reveal content -->
+    <section class="scene scene--valley" id="valley">
+      <div class="valley__inner">
+        <article class="reveal" data-reveal>
+          <h2>The valley opens</h2>
+          <p>
+            Foreground grasses rush past while distant ridges linger, the classic
+            trick of depth. Each band of scenery moves as a fraction of your scroll,
+            so the world gains dimension without a single photograph.
+          </p>
+        </article>
+        <article class="reveal" data-reveal>
+          <h2>Motion with restraint</h2>
+          <p>
+            Every transform runs inside a single requestAnimationFrame loop and is
+            batched to the scroll position, keeping the page smooth even on modest
+            hardware. Nothing animates that the eye cannot follow.
+          </p>
+        </article>
+        <div class="stats reveal" data-reveal>
+          <div class="stat"><span class="stat__num" data-count="4">0</span><span class="stat__label">parallax layers</span></div>
+          <div class="stat"><span class="stat__num" data-count="60">0</span><span class="stat__label">fps target</span></div>
+          <div class="stat"><span class="stat__num" data-count="0">0</span><span class="stat__label">image files</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scene 3: night with drifting hills -->
+    <section class="scene scene--night" id="night">
+      <div class="layer layer--stars" data-parallax data-speed="0.2"></div>
+      <div class="layer layer--moon" data-parallax data-speed="0.4"></div>
+      <svg class="layer layer--hills-back" data-parallax data-speed="0.55" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <path d="M0 400 L0 300 Q360 200 720 300 T1440 300 L1440 400 Z" fill="#1b2b52"/>
+      </svg>
+      <svg class="layer layer--hills-front" data-parallax data-speed="0.85" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <path d="M0 400 L0 340 Q300 260 600 340 T1200 340 T1440 330 L1440 400 Z" fill="#0d1633"/>
+      </svg>
+      <div class="night__copy" data-reveal>
+        <h2>And then, nightfall.</h2>
+        <p>The stars drift slowly, the hills roll fast, and the journey settles into stillness.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Pure CSS &amp; SVG scenery. Respects reduced-motion preferences.</p>
+  </footer>
+</body>
+</html>
