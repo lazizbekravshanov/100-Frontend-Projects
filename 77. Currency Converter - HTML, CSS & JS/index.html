@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <header class="card__header">
+      <h1 class="card__title">Currency Converter</h1>
+      <p class="card__subtitle">Real-time reference rates from the European Central Bank.</p>
+    </header>
+
+    <form class="converter" id="converter" novalidate>
+      <div class="field">
+        <label class="field__label" for="amount">Amount</label>
+        <input
+          class="field__input"
+          id="amount"
+          type="number"
+          inputmode="decimal"
+          min="0"
+          step="any"
+          value="1"
+          autocomplete="off">
+      </div>
+
+      <div class="currencies">
+        <div class="field">
+          <label class="field__label" for="from">From</label>
+          <select class="field__select" id="from" aria-label="Convert from currency"></select>
+        </div>
+
+        <button class="swap" id="swap" type="button" aria-label="Swap currencies">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+        </button>
+
+        <div class="field">
+          <label class="field__label" for="to">To</label>
+          <select class="field__select" id="to" aria-label="Convert to currency"></select>
+        </div>
+      </div>
+    </form>
+
+    <section class="result" id="result" aria-live="polite">
+      <p class="result__status" id="status">Loading currencies…</p>
+      <div class="result__body" id="result-body" hidden>
+        <p class="result__value" id="converted">—</p>
+        <p class="result__rate" id="rate">—</p>
+        <p class="result__date" id="date">—</p>
+      </div>
+    </section>
+
+    <footer class="card__footer">
+      <p>Rates from <a href="https://www.frankfurter.app" target="_blank" rel="noopener">Frankfurter</a> · no API key</p>
+    </footer>
+  </main>
+</body>
+</html>
