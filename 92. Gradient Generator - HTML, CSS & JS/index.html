@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradient Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="page__head">
+      <p class="eyebrow">CSS Tool</p>
+      <h1>Gradient Generator</h1>
+      <p class="lede">Design linear and radial gradients, drag stops along the track, then copy the CSS.</p>
+    </header>
+
+    <main class="layout">
+      <section class="preview" aria-label="Gradient preview">
+        <div class="preview__swatch" id="swatch"></div>
+      </section>
+
+      <section class="panel" aria-label="Controls">
+        <div class="row">
+          <div class="field">
+            <span class="field__label" id="type-label">Type</span>
+            <div class="toggle" role="group" aria-labelledby="type-label">
+              <button type="button" class="toggle__btn is-active" data-type="linear">Linear</button>
+              <button type="button" class="toggle__btn" data-type="radial">Radial</button>
+            </div>
+          </div>
+
+          <div class="field" id="angle-field">
+            <label for="angle">Angle <span class="val" id="angle-val">90</span>&deg;</label>
+            <input type="range" id="angle" min="0" max="360" step="1" value="90">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="field__head">
+            <span class="field__label">Color stops</span>
+            <button type="button" id="add-stop" class="btn btn--ghost">+ Add stop</button>
+          </div>
+          <div class="track" id="track" aria-label="Gradient stop track"></div>
+          <ul class="stops" id="stops"></ul>
+        </div>
+
+        <div class="field">
+          <span class="field__label">CSS output</span>
+          <div class="output">
+            <code id="css-output"></code>
+            <div class="output__actions">
+              <button type="button" id="random" class="btn btn--ghost">Random</button>
+              <button type="button" id="copy" class="btn btn--primary">Copy CSS</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
