@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Cursor Effects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="cursor" data-cursor aria-hidden="true">
+    <div class="cursor__ring" data-cursor-ring></div>
+    <div class="cursor__dot" data-cursor-dot></div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="#top" data-magnetic>Cursor<span>Lab</span></a>
+      <ul class="nav__links">
+        <li><a href="#demos" data-magnetic>Demos</a></li>
+        <li><a href="#about" data-magnetic>About</a></li>
+        <li><a href="#play" data-magnetic>Play</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Project 96</p>
+      <h1 class="hero__title">A custom cursor<br>that follows you.</h1>
+      <p class="hero__lede">
+        A precise dot paired with a trailing ring that eases toward your pointer,
+        grows over interactive elements, and snaps magnetically to key targets.
+        Move your mouse to feel it.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="#play" data-magnetic>Try the playground</a>
+        <a class="btn btn--ghost" href="#about" data-magnetic>How it works</a>
+      </div>
+    </section>
+
+    <section id="demos" class="section">
+      <h2 class="section__title">Interactive targets</h2>
+      <p class="section__lede">The cursor reacts differently depending on what it is over.</p>
+      <div class="grid">
+        <article class="card" data-cursor-label="Read">
+          <h3>Hover to expand</h3>
+          <p>Over any card the ring grows and softens, signalling an interactive surface.</p>
+        </article>
+        <article class="card" data-cursor-label="Open">
+          <h3>Labelled hover</h3>
+          <p>Some targets whisper a short label into the cursor as you approach them.</p>
+        </article>
+        <article class="card card--accent" data-magnetic data-cursor-label="Pull">
+          <h3>Magnetic pull</h3>
+          <p>This card tugs the cursor toward its centre for a tactile, deliberate feel.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="play" class="section section--play">
+      <h2 class="section__title">Magnetic playground</h2>
+      <p class="section__lede">Buttons here lean into your pointer. Keyboard users get clean focus rings.</p>
+      <div class="play">
+        <button class="dot-btn" data-magnetic type="button" aria-label="Magnetic button one">01</button>
+        <button class="dot-btn" data-magnetic type="button" aria-label="Magnetic button two">02</button>
+        <button class="dot-btn" data-magnetic type="button" aria-label="Magnetic button three">03</button>
+        <button class="dot-btn" data-magnetic type="button" aria-label="Magnetic button four">04</button>
+      </div>
+    </section>
+
+    <section id="about" class="section section--about">
+      <h2 class="section__title">Built with care</h2>
+      <ul class="facts">
+        <li><strong>Eased trailing</strong> via requestAnimationFrame and linear interpolation.</li>
+        <li><strong>Touch aware</strong> — pointer devices only; touch keeps the native cursor.</li>
+        <li><strong>Reduced motion</strong> — honours <code>prefers-reduced-motion</code>, dropping the trail.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Move, hover, click. The default cursor is hidden on pointer devices.</p>
+  </footer>
+</body>
+</html>
