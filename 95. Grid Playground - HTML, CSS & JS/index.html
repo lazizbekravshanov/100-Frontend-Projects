@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Playground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="page__head">
+      <p class="eyebrow">CSS Tool</p>
+      <h1>Grid Playground</h1>
+      <p class="lede">Set columns and rows, tune spacing and alignment, then copy the grid CSS.</p>
+    </header>
+
+    <main class="layout">
+      <section class="stage" aria-label="Grid preview">
+        <div class="demo" id="demo"></div>
+      </section>
+
+      <section class="panel" aria-label="Controls">
+        <div class="control">
+          <label for="cols">Columns <span class="val" id="cols-val">3</span></label>
+          <input type="range" id="cols" min="1" max="6" value="3">
+        </div>
+        <div class="control">
+          <label for="rows">Rows <span class="val" id="rows-val">2</span></label>
+          <input type="range" id="rows" min="1" max="6" value="2">
+        </div>
+        <div class="control">
+          <label for="gap">gap <span class="val" id="gap-val">12</span>px</label>
+          <input type="range" id="gap" min="0" max="40" value="12">
+        </div>
+        <div class="control">
+          <label for="justify">justify-items</label>
+          <select id="justify">
+            <option value="stretch">stretch</option>
+            <option value="start">start</option>
+            <option value="center">center</option>
+            <option value="end">end</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="align">align-items</label>
+          <select id="align">
+            <option value="stretch">stretch</option>
+            <option value="start">start</option>
+            <option value="center">center</option>
+            <option value="end">end</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="preset">Preset</label>
+          <select id="preset">
+            <option value="equal">Equal columns</option>
+            <option value="sidebar">Sidebar + content</option>
+            <option value="holy">Holy grail</option>
+          </select>
+        </div>
+
+        <div class="control">
+          <span class="field__label">CSS output</span>
+          <div class="output">
+            <code id="css-output"></code>
+            <div class="output__actions">
+              <button type="button" id="copy" class="btn btn--primary">Copy CSS</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
