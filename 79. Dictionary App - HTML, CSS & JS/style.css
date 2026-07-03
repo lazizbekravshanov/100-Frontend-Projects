@@ -1,0 +1,262 @@
+:root {
+  --bg: #ffffff;
+  --surface: #f7f7f8;
+  --text: #18181b;
+  --muted: #71717a;
+  --border: #e4e4e7;
+  --accent: #b45309;
+  --radius: 14px;
+  --space: 1rem;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --serif: 'Newsreader', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3rem) 1.25rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page__title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.page__subtitle {
+  color: var(--muted);
+  margin: 0.35rem 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.search__label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+.search__row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search__input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search__input:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.15);
+}
+
+.search__btn {
+  font: inherit;
+  font-weight: 500;
+  padding: 0.7rem 1.25rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.search__btn:hover {
+  background: #92400e;
+}
+
+.search__btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.page__main {
+  flex: 1;
+  margin-top: 1.75rem;
+}
+
+.status {
+  color: var(--muted);
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.status--error {
+  color: #b91c1c;
+}
+
+.entry__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.entry__word {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 8vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.entry__phonetic {
+  color: var(--accent);
+  font-size: 1.05rem;
+  margin-top: 0.15rem;
+}
+
+.audio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.audio:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.audio:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.meaning {
+  margin-bottom: 2rem;
+}
+
+.meaning__pos {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.meaning__pos::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.meaning__subtitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.definitions {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.definition {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.definition__marker {
+  color: var(--accent);
+  flex-shrink: 0;
+  line-height: 1.6;
+}
+
+.definition__example {
+  display: block;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.35rem;
+}
+
+.synonyms {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.synonyms__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.synonym {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.page__footer {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.page__footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.page__footer a:hover {
+  text-decoration: underline;
+}

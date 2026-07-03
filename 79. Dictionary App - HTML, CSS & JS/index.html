@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictionary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="page__header">
+      <h1 class="page__title">Dictionary</h1>
+      <p class="page__subtitle">Definitions, pronunciation, and examples for any English word.</p>
+      <form class="search" id="search-form" role="search">
+        <label class="search__label" for="word">Look up a word</label>
+        <div class="search__row">
+          <input
+            class="search__input"
+            id="word"
+            type="text"
+            placeholder="e.g. serendipity"
+            autocomplete="off"
+            spellcheck="false">
+          <button class="search__btn" type="submit">Define</button>
+        </div>
+      </form>
+    </header>
+
+    <main class="page__main" id="main">
+      <p class="status" id="status" role="status" aria-live="polite">Search for a word to begin.</p>
+
+      <article class="entry" id="entry" hidden>
+        <header class="entry__head">
+          <div>
+            <h2 class="entry__word" id="entry-word">—</h2>
+            <p class="entry__phonetic" id="entry-phonetic"></p>
+          </div>
+          <button class="audio" id="audio-btn" type="button" hidden aria-label="Play pronunciation">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+          </button>
+        </header>
+        <div class="meanings" id="meanings"></div>
+      </article>
+    </main>
+
+    <footer class="page__footer">
+      <p>Data from <a href="https://dictionaryapi.dev" target="_blank" rel="noopener">Free Dictionary API</a> · no API key</p>
+    </footer>
+  </div>
+</body>
+</html>
