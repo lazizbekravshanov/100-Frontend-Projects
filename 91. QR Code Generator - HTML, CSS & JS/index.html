@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="page__head">
+      <p class="eyebrow">Encoder</p>
+      <h1>QR Code Generator</h1>
+      <p class="lede">Type any text or URL and get a real, scannable QR code. The encoder runs entirely in your browser &mdash; no libraries, no network.</p>
+    </header>
+
+    <main class="layout">
+      <section class="panel" aria-label="Controls">
+        <div class="field">
+          <label for="qr-input">Text or URL</label>
+          <textarea id="qr-input" rows="4" placeholder="https://example.com" spellcheck="false">https://claude.com</textarea>
+        </div>
+
+        <div class="field">
+          <label for="qr-ecc">Error correction</label>
+          <select id="qr-ecc">
+            <option value="L">L &mdash; Low (7%)</option>
+            <option value="M" selected>M &mdash; Medium (15%)</option>
+            <option value="Q">Q &mdash; Quartile (25%)</option>
+            <option value="H">H &mdash; High (30%)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="qr-size">Module size <span class="val" id="qr-size-val">8</span>px</label>
+          <input type="range" id="qr-size" min="3" max="16" step="1" value="8">
+        </div>
+
+        <div class="field">
+          <label for="qr-margin">Quiet zone <span class="val" id="qr-margin-val">4</span> modules</label>
+          <input type="range" id="qr-margin" min="0" max="10" step="1" value="4">
+        </div>
+
+        <div class="actions">
+          <button type="button" id="qr-download" class="btn btn--primary">Download PNG</button>
+        </div>
+
+        <p class="meta" id="qr-meta" aria-live="polite"></p>
+      </section>
+
+      <section class="preview" aria-label="QR code preview">
+        <div class="preview__stage">
+          <canvas id="qr-canvas" width="200" height="200" aria-label="Generated QR code"></canvas>
+        </div>
+        <p class="preview__hint">Scan with your phone camera to test.</p>
+      </section>
+    </main>
+
+    <footer class="page__foot">
+      <p>Byte-mode QR with Reed&ndash;Solomon error correction, built in vanilla JavaScript.</p>
+    </footer>
+  </div>
+</body>
+</html>
