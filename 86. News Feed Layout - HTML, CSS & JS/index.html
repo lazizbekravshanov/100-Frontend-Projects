@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dispatch — News Feed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true">◆</span>
+        <span class="brand__name">Dispatch</span>
+      </div>
+      <p class="site-header__date" id="today"></p>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Article categories">
+    <div class="wrap tabs__inner" id="tabs" role="tablist"></div>
+  </nav>
+
+  <main class="wrap layout">
+    <div class="layout__main">
+      <section class="featured" id="featured" aria-label="Featured story"></section>
+      <section aria-label="Latest articles">
+        <h2 class="section-title">Latest</h2>
+        <div class="cards" id="cards"></div>
+      </section>
+    </div>
+
+    <aside class="sidebar" aria-label="Trending and newsletter">
+      <section class="panel">
+        <h2 class="panel__title">Trending</h2>
+        <ol class="trending" id="trending"></ol>
+      </section>
+      <section class="panel newsletter">
+        <h2 class="panel__title">The Morning Brief</h2>
+        <p class="newsletter__copy">A concise digest of the day's essential stories, delivered before your first coffee.</p>
+        <form class="newsletter__form" id="newsletter-form">
+          <label class="sr-only" for="email">Email address</label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter__note" id="newsletter-note" role="status"></p>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Dispatch — a demo news layout. Content is illustrative.</p>
+    </div>
+  </footer>
+</body>
+</html>
