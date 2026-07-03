@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Playground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="page__head">
+      <p class="eyebrow">CSS Tool</p>
+      <h1>Flexbox Playground</h1>
+      <p class="lede">Toggle container properties and watch the items respond. Copy the CSS when it looks right.</p>
+    </header>
+
+    <main class="layout">
+      <section class="stage" aria-label="Flex container preview">
+        <div class="demo" id="demo">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <div class="stage__actions">
+          <button type="button" id="add-item" class="btn btn--ghost">+ Add item</button>
+          <button type="button" id="remove-item" class="btn btn--ghost">− Remove item</button>
+        </div>
+      </section>
+
+      <section class="panel" aria-label="Controls">
+        <div class="control">
+          <label for="direction">flex-direction</label>
+          <select id="direction">
+            <option value="row">row</option>
+            <option value="row-reverse">row-reverse</option>
+            <option value="column">column</option>
+            <option value="column-reverse">column-reverse</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="justify">justify-content</label>
+          <select id="justify">
+            <option value="flex-start">flex-start</option>
+            <option value="flex-end">flex-end</option>
+            <option value="center">center</option>
+            <option value="space-between">space-between</option>
+            <option value="space-around">space-around</option>
+            <option value="space-evenly">space-evenly</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="align">align-items</label>
+          <select id="align">
+            <option value="stretch">stretch</option>
+            <option value="flex-start">flex-start</option>
+            <option value="flex-end">flex-end</option>
+            <option value="center">center</option>
+            <option value="baseline">baseline</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="wrap">flex-wrap</label>
+          <select id="wrap">
+            <option value="nowrap">nowrap</option>
+            <option value="wrap">wrap</option>
+            <option value="wrap-reverse">wrap-reverse</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="gap">gap <span class="val" id="gap-val">12</span>px</label>
+          <input type="range" id="gap" min="0" max="48" value="12">
+        </div>
+
+        <div class="control">
+          <span class="field__label">CSS output</span>
+          <div class="output">
+            <code id="css-output"></code>
+            <div class="output__actions">
+              <button type="button" id="copy" class="btn btn--primary">Copy CSS</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
