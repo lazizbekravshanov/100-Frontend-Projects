@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Shadow Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="page__head">
+      <p class="eyebrow">CSS Tool</p>
+      <h1>Box Shadow Generator</h1>
+      <p class="lede">Stack multiple shadows, tune every value, and copy the CSS.</p>
+    </header>
+
+    <main class="layout">
+      <section class="preview" aria-label="Shadow preview">
+        <div class="preview__box" id="preview-box"></div>
+      </section>
+
+      <section class="panel" aria-label="Controls">
+        <div class="field">
+          <div class="field__head">
+            <span class="field__label">Layers</span>
+            <button type="button" id="add-layer" class="btn btn--ghost">+ Add layer</button>
+          </div>
+          <ul class="layers" id="layers"></ul>
+        </div>
+
+        <fieldset class="controls" id="controls">
+          <legend class="field__label">Selected layer</legend>
+
+          <div class="control">
+            <label for="x">Offset X <span class="val" id="x-val">0</span>px</label>
+            <input type="range" id="x" min="-100" max="100" value="0">
+          </div>
+          <div class="control">
+            <label for="y">Offset Y <span class="val" id="y-val">10</span>px</label>
+            <input type="range" id="y" min="-100" max="100" value="10">
+          </div>
+          <div class="control">
+            <label for="blur">Blur <span class="val" id="blur-val">25</span>px</label>
+            <input type="range" id="blur" min="0" max="200" value="25">
+          </div>
+          <div class="control">
+            <label for="spread">Spread <span class="val" id="spread-val">-5</span>px</label>
+            <input type="range" id="spread" min="-100" max="100" value="-5">
+          </div>
+          <div class="control control--split">
+            <div>
+              <label for="color">Color</label>
+              <input type="color" id="color" value="#18181b">
+            </div>
+            <div>
+              <label for="opacity">Opacity <span class="val" id="opacity-val">20</span>%</label>
+              <input type="range" id="opacity" min="0" max="100" value="20">
+            </div>
+          </div>
+          <div class="control control--inline">
+            <input type="checkbox" id="inset">
+            <label for="inset">Inset shadow</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <span class="field__label">CSS output</span>
+          <div class="output">
+            <code id="css-output"></code>
+            <div class="output__actions">
+              <button type="button" id="copy" class="btn btn--primary">Copy CSS</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
