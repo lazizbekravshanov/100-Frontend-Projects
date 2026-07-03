@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Profile Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="page__header">
+      <h1 class="page__title">GitHub Profile Finder</h1>
+      <p class="page__subtitle">Look up any GitHub user and see their profile at a glance.</p>
+      <form class="search" id="search-form" role="search">
+        <label class="search__label" for="username">GitHub username</label>
+        <div class="search__row">
+          <input
+            class="search__input"
+            id="username"
+            type="text"
+            placeholder="e.g. torvalds"
+            autocomplete="off"
+            spellcheck="false">
+          <button class="search__btn" type="submit">Search</button>
+        </div>
+      </form>
+    </header>
+
+    <main class="page__main" id="main">
+      <p class="status" id="status" role="status" aria-live="polite">Search for a GitHub username to begin.</p>
+
+      <article class="profile" id="profile" hidden>
+        <header class="profile__head">
+          <img class="profile__avatar" id="avatar" src="" alt="" width="88" height="88">
+          <div class="profile__id">
+            <h2 class="profile__name" id="name">—</h2>
+            <a class="profile__login" id="login" href="#" target="_blank" rel="noopener">—</a>
+            <p class="profile__bio" id="bio"></p>
+          </div>
+        </header>
+
+        <ul class="metrics" id="metrics">
+          <li class="metric"><span class="metric__value" id="repos">0</span><span class="metric__label">Repos</span></li>
+          <li class="metric"><span class="metric__value" id="followers">0</span><span class="metric__label">Followers</span></li>
+          <li class="metric"><span class="metric__value" id="following">0</span><span class="metric__label">Following</span></li>
+        </ul>
+
+        <section class="repos" id="repos-section">
+          <h3 class="repos__title">Top repositories</h3>
+          <ul class="repos__list" id="repos-list"></ul>
+        </section>
+      </article>
+    </main>
+
+    <footer class="page__footer">
+      <p>Data from the <a href="https://docs.github.com/rest" target="_blank" rel="noopener">GitHub REST API</a> · no API key</p>
+    </footer>
+  </div>
+</body>
+</html>
