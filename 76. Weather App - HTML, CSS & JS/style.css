@@ -1,0 +1,272 @@
+:root {
+  --bg: #ffffff;
+  --surface: #f7f7f8;
+  --text: #18181b;
+  --muted: #71717a;
+  --border: #e4e4e7;
+  --accent: #2563eb;
+  --radius: 14px;
+  --space: 1rem;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3rem) 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app__header {
+  margin-bottom: 1.5rem;
+}
+
+.app__title {
+  font-size: clamp(1.75rem, 6vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.app__subtitle {
+  color: var(--muted);
+  margin: 0.35rem 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.search__label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+.search__row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search__input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color 0.15s ease;
+}
+
+.search__input::placeholder {
+  color: var(--muted);
+}
+
+.search__input:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.search__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font: inherit;
+  font-weight: 500;
+  padding: 0.7rem 1.1rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.search__btn:hover {
+  background: #1d4ed8;
+}
+
+.search__btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.app__main {
+  flex: 1;
+}
+
+.status {
+  color: var(--muted);
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.status--error {
+  color: #b91c1c;
+}
+
+.current {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.current__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.current__place {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.current__desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.15rem;
+}
+
+.current__icon {
+  font-size: 2.75rem;
+  line-height: 1;
+}
+
+.current__temp {
+  font-size: clamp(3rem, 14vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0.5rem 0 1.25rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.current__unit {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+.stats {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.stat {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+}
+
+.stat__label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+
+.stat__value {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.forecast__title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.forecast__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.day {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 0.4rem;
+  text-align: center;
+}
+
+.day__name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.day__icon {
+  font-size: 1.5rem;
+  margin: 0.35rem 0;
+}
+
+.day__temps {
+  font-size: 0.8rem;
+}
+
+.day__hi {
+  font-weight: 600;
+}
+
+.day__lo {
+  color: var(--muted);
+}
+
+.app__footer {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.app__footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.app__footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 460px) {
+  .forecast__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .day:nth-child(n+4) {
+    display: none;
+  }
+}
