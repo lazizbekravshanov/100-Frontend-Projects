@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ava Lindgren &mdash; Frontend Developer</title>
+  <meta name="description" content="Portfolio of Ava Lindgren, a frontend developer crafting fast, accessible, and considered web interfaces.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top">AL<span>.</span></a>
+      <nav class="nav__menu" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false">
+        <span class="theme-toggle__icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <p class="eyebrow" data-animate>Frontend Developer &middot; Stockholm</p>
+      <h1 class="hero__title" data-animate>
+        I build interfaces that feel<br>
+        <span class="hero__accent">quiet, quick, and clear.</span>
+      </h1>
+      <p class="hero__lede" data-animate>
+        Hi, I&rsquo;m Ava &mdash; a developer who cares about the small things: crisp type,
+        honest motion, and pages that work for everyone. This site caps a hundred
+        hand-built frontend studies.
+      </p>
+      <div class="hero__actions" data-animate>
+        <a class="btn btn--solid" href="#work">View selected work</a>
+        <a class="btn btn--ghost" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section__head" data-animate>
+        <span class="section__index">01</span>
+        <h2 class="section__title">About</h2>
+      </div>
+      <div class="about">
+        <p class="about__lead" data-animate>
+          I&rsquo;ve spent the last several years turning designs into resilient,
+          accessible front ends &mdash; the kind that hold up on a five-year-old
+          phone and read cleanly to a screen reader.
+        </p>
+        <p class="about__body" data-animate>
+          My approach is unglamorous on purpose: semantic HTML first, CSS that
+          scales, and just enough JavaScript to make things feel alive. I sweat
+          performance budgets, keyboard paths, and the difference between 1.4 and
+          1.6 line-height.
+        </p>
+        <dl class="about__facts" data-animate>
+          <div><dt>Focus</dt><dd>Accessible UI &amp; design systems</dd></div>
+          <div><dt>Tooling</dt><dd>Vanilla-first, framework-fluent</dd></div>
+          <div><dt>Based in</dt><dd>Stockholm, remote-friendly</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section__head" data-animate>
+        <span class="section__index">02</span>
+        <h2 class="section__title">Skills</h2>
+      </div>
+      <ul class="skills">
+        <li class="skill" data-animate>
+          <h3>Semantic HTML</h3>
+          <p>Structure that machines and people both understand.</p>
+        </li>
+        <li class="skill" data-animate>
+          <h3>Modern CSS</h3>
+          <p>Grid, custom properties, container-aware layouts, fluid type.</p>
+        </li>
+        <li class="skill" data-animate>
+          <h3>Vanilla JavaScript</h3>
+          <p>The platform, used well &mdash; no framework required.</p>
+        </li>
+        <li class="skill" data-animate>
+          <h3>Accessibility</h3>
+          <p>WCAG-minded, keyboard-first, tested with real assistive tech.</p>
+        </li>
+        <li class="skill" data-animate>
+          <h3>Performance</h3>
+          <p>Lean payloads, smooth 60fps motion, measured not guessed.</p>
+        </li>
+        <li class="skill" data-animate>
+          <h3>Design sense</h3>
+          <p>Type, spacing, and restraint that make products feel calm.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section__head" data-animate>
+        <span class="section__index">03</span>
+        <h2 class="section__title">Selected work</h2>
+      </div>
+      <p class="section__note" data-animate>A few builds from the hundred-project series. Each opens standalone.</p>
+      <div class="work">
+        <a class="project" href="../4.%20Pricing%20Cards%20-%20HTML%20&amp;%20CSS/index.html" data-animate>
+          <span class="project__num">04</span>
+          <h3>Pricing Cards</h3>
+          <p>A clean three-tier pricing layout with a highlighted plan.</p>
+          <span class="project__go">Open &#8599;</span>
+        </a>
+        <a class="project" href="../44.%20Form%20Validation%20-%20HTML,%20CSS%20&amp;%20JS/index.html" data-animate>
+          <span class="project__num">44</span>
+          <h3>Form Validation</h3>
+          <p>Real-time, accessible validation with clear error messaging.</p>
+          <span class="project__go">Open &#8599;</span>
+        </a>
+        <a class="project" href="../76.%20Weather%20App%20-%20HTML,%20CSS%20&amp;%20JS/index.html" data-animate>
+          <span class="project__num">76</span>
+          <h3>Weather App</h3>
+          <p>Live conditions from a free, no-auth forecast API.</p>
+          <span class="project__go">Open &#8599;</span>
+        </a>
+        <a class="project" href="../98.%20Keyboard%20Piano%20-%20HTML,%20CSS%20&amp;%20JS/index.html" data-animate>
+          <span class="project__num">98</span>
+          <h3>Keyboard Piano</h3>
+          <p>A playable synth built entirely on the Web Audio API.</p>
+          <span class="project__go">Open &#8599;</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section__head" data-animate>
+        <span class="section__index">04</span>
+        <h2 class="section__title">Contact</h2>
+      </div>
+      <div class="contact">
+        <p class="contact__lead" data-animate>Have a project or a role in mind? Send a note.</p>
+        <form class="form" data-form novalidate data-animate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+            <span class="field__error" data-error-for="name"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <span class="field__error" data-error-for="email"></span>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <span class="field__error" data-error-for="message"></span>
+          </div>
+          <button class="btn btn--solid" type="submit">Send message</button>
+          <p class="form__success" data-success role="status" hidden>Thanks &mdash; your message is ready to send. I&rsquo;ll be in touch soon.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__name">Ava Lindgren</p>
+    <nav class="site-footer__links" aria-label="Elsewhere">
+      <a href="#top">Back to top</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p class="site-footer__meta">Built by hand &middot; Project 100 of 100</p>
+  </footer>
+</body>
+</html>
